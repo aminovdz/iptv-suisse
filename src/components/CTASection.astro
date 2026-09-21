@@ -1,0 +1,89 @@
+---
+import { MessageCircle, Sparkles, ArrowRight, CheckCircle2 } from 'lucide-astro';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  title = "Prêt à profiter du meilleur streaming IPTV en Suisse ?",
+  subtitle = "Rejoignez plus de 1'940 utilisateurs satisfaits à Genève, Lausanne, Zürich et dans toute la Suisse. Accédez à vos programmes en 4K Ultra HD sans engagement et économisez des centaines de francs chaque année."
+} = Astro.props;
+
+const whatsappUrl = "https://wa.me/18036582620?text=Bonjour%21%20Je%20souhaite%20profiter%20de%20l%27offre%20IPTV%20Suisse%20%2812%20Mois%20%C3%A0%20CHF%2055.-%29.";
+const telegramUrl = "https://t.me/castvera_com";
+---
+
+<section class="py-20 md:py-28 relative overflow-hidden bg-gradient-to-b from-[#0B0C10] via-[#10121A] to-[#0B0C10]" aria-labelledby="cta-heading">
+  <!-- Glowing Background Accents -->
+  <div class="absolute inset-0 pointer-events-none -z-10" aria-hidden="true">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[360px] bg-gradient-to-r from-[#DC2626]/20 via-[#2563EB]/20 to-[#DC2626]/20 rounded-full blur-[140px]"></div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative rounded-3xl bg-gradient-to-br from-[#161824] via-[#12141D] to-[#0E1017] border border-[#DC2626]/30 p-8 sm:p-12 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.6)] overflow-hidden text-center">
+      
+      <!-- Top Promo Pill -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#DC2626]/15 border border-[#DC2626]/40 text-[#DC2626] text-xs font-bold uppercase tracking-wider mb-6">
+        <Sparkles class="w-4 h-4 text-[#F59E0B]" />
+        <span>Offre Exclusive Suisse · Activation Immédiate</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h2 id="cta-heading" class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight max-w-3xl mx-auto mb-6 leading-tight">
+        {title}
+      </h2>
+
+      <!-- Subtitle -->
+      <p class="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+        {subtitle} Vos identifiants transmis en moins de 2 minutes sur WhatsApp, une assistance bilingue en continu et notre garantie satisfait ou remboursé 24 heures.
+      </p>
+
+      <!-- Value Props Checkpoints -->
+      <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-8 mb-10 text-sm font-medium text-gray-200">
+        <div class="flex items-center gap-2">
+          <CheckCircle2 class="w-4 h-4 text-[#10B981]" />
+          <span>Sans engagement de durée (liberté totale)</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <CheckCircle2 class="w-4 h-4 text-[#10B981]" />
+          <span>Compatible Smart TV, Fire Stick, Apple TV & Mobile</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <CheckCircle2 class="w-4 h-4 text-[#10B981]" />
+          <span>Garantie Satisfait ou Remboursé 24h</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto mb-10">
+        <a
+          href="/#pricing"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl text-base font-black text-white bg-gradient-to-r from-[#DC2626] to-[#EF4444] shadow-[0_10px_30px_rgba(220,38,38,0.4)] hover:shadow-[0_15px_40px_rgba(220,38,38,0.6)] transition-all hover:scale-[1.02]"
+          aria-label="Voir les offres et tarifs IPTV Suisse"
+        >
+          <span>Choisir un Plan (dès CHF 8.-)</span>
+          <ArrowRight class="w-5 h-5" />
+        </a>
+
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl text-sm font-bold text-white bg-[#25D366]/20 border border-[#25D366]/40 hover:bg-[#25D366]/30 transition-all shadow-lg"
+          aria-label="Contacter le support IPTV Suisse sur WhatsApp"
+        >
+          <MessageCircle class="w-5 h-5 text-[#25D366]" />
+          <span>Assistance WhatsApp 24/7</span>
+        </a>
+      </div>
+
+      <!-- Live Channels Trust Message -->
+      <p class="text-xs text-gray-400">
+        Rejoignez notre chaîne <a href={telegramUrl} target="_blank" rel="noopener noreferrer" class="text-sky-400 underline hover:text-sky-300">Telegram officielle</a> pour les actualités et annonces de maintenance de serveurs.
+      </p>
+
+    </div>
+  </div>
+</section>

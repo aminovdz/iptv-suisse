@@ -1,0 +1,232 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import StickyHeader from '../../components/StickyHeader.astro';
+import FeatureGrid from '../../components/FeatureGrid.astro';
+import PricingCard from '../../components/PricingCard.astro';
+import ReferralBanner from '../../components/ReferralBanner.astro';
+import UserReviewsSection from '../../components/UserReviewsSection.astro';
+import ProcessSteps from '../../components/ProcessSteps.astro';
+import SupportedDevices from '../../components/SupportedDevices.astro';
+import CitiesList from '../../components/CitiesList.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import CTASection from '../../components/CTASection.astro';
+import Footer from '../../components/Footer.astro';
+import FloatingWhatsApp from '../../components/FloatingWhatsApp.astro';
+import SocialPopup from '../../components/SocialPopup.astro';
+import ExitPopup from '../../components/ExitPopup.astro';
+import GroupsPopup from '../../components/GroupsPopup.astro';
+import { Scale, ArrowRight, MessageCircle } from 'lucide-astro';
+
+export async function getStaticPaths() {
+  const comparisons = [
+    {
+      brand: 'iptv-suisse',
+      competitor: 'swisscom-blue-tv',
+      competitorName: 'Swisscom blue TV',
+      competitorPriceMonth: 'CHF 119.-',
+      competitorPriceYear: "CHF 1'428.-",
+      competitorBoxFee: 'CHF 5.-/mois (TV Box inclus/suppl.)',
+      competitorCommitment: '24 Mois obligatoire',
+      competitorSkipAds: 'CHF 7.90/mois pour zapper les pubs',
+      summary: "Swisscom blue TV propose une offre solide mais particulièrement coûteuse avec des frais cachés (option pour passer les pubs du Replay, engagement de 24 mois). IPTV Suisse vous fait économiser plus de CHF 1'350.- chaque année."
+    },
+    {
+      brand: 'iptv-suisse',
+      competitor: 'sunrise-tv',
+      competitorName: 'Sunrise TV',
+      competitorPriceMonth: 'CHF 99.-',
+      competitorPriceYear: "CHF 1'188.-",
+      competitorBoxFee: 'CHF 10.-/mois par décodeur additionnel',
+      competitorCommitment: '12 à 24 Mois',
+      competitorSkipAds: 'CHF 7.90/mois (Option Skip Ads)',
+      summary: "L'offre Sunrise TV implique un abonnement fixe contraignant et des suppléments pour chaque téléviseur supplémentaire. IPTV Suisse fonctionne sans boîtier propriétaire directement sur votre Smart TV."
+    },
+    {
+      brand: 'iptv-suisse',
+      competitor: 'salt-tv',
+      competitorName: 'Salt Home TV',
+      competitorPriceMonth: 'CHF 49.95',
+      competitorPriceYear: 'CHF 599.40',
+      competitorBoxFee: 'Obligation de souscrire à la fibre Salt',
+      competitorCommitment: '12 Mois',
+      competitorSkipAds: 'Replay 7j restreint',
+      summary: "Salt TV est conditionnée à l'éligibilité physique à la fibre Salt. IPTV Suisse fonctionne en toute indépendance quel que soit votre fournisseur d'accès internet en Suisse (Fibre, 5G, Câble)."
+    }
+  ];
+
+  return comparisons.map(item => ({
+    params: { brand: item.brand, competitor: item.competitor },
+    props: { comparison: item }
+  }));
+}
+
+const { comparison } = Astro.props;
+
+const pageTitle = `IPTV Suisse vs ${comparison.competitorName} (2026) — Comparatif Prix & Qualité`;
+const pageDescription = `Comparatif détaillé IPTV Suisse contre ${comparison.competitorName}. Tarifs, qualité 4K, engagement et économies annuelles pour les foyers suisses.`;
+
+const comparisonSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": `IPTV Suisse — Comparatif contre ${comparison.competitorName}`,
+  "description": comparison.summary,
+  "brand": {
+    "@type": "Brand",
+    "name": "IPTV Suisse"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "55.00",
+    "priceCurrency": "CHF",
+    "availability": "https://schema.org/InStock",
+    "url": "https://iptvsuisse.it.com/#pricing"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "1940"
+  }
+};
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonical={`/compare/iptv-suisse-vs-${comparison.competitor}`}
+  keywords={[`iptv suisse vs ${comparison.competitorName.toLowerCase()}`, `comparatif ${comparison.competitorName.toLowerCase()}`, `resilier ${comparison.competitorName.toLowerCase()}`, `alternative ${comparison.competitorName.toLowerCase()}`]}
+  schema={comparisonSchema}
+>
+  <StickyHeader />
+
+  <main class="min-h-screen pt-28 bg-[#0B0C10] text-gray-200">
+    <!-- 1. Comparison Hero -->
+    <section class="py-16 md:py-24 relative overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none -z-10" aria-hidden="true">
+        <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#DC2626]/12 rounded-full blur-[140px]"></div>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-black uppercase tracking-wider mb-6">
+          <Scale class="w-4 h-4" />
+          <span>Comparatif Télécom Suisse 🇨🇭</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight mb-6">
+          IPTV Suisse <span class="text-gray-400 font-light">vs</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-amber-400">{comparison.competitorName}</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10">
+          {comparison.summary}
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+          <a
+            href="#pricing"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-[#DC2626] to-[#EF4444] text-white font-black text-base shadow-xl shadow-red-900/30 hover:scale-[1.02] transition-transform"
+          >
+            <span>Choisir IPTV Suisse (CHF 55.-/an)</span>
+            <ArrowRight class="w-5 h-5" />
+          </a>
+
+          <a
+            href="https://wa.me/18036582620?text=Bonjour,%20je%20souhaite%20un%20test%20comparatif%20IPTV%20Suisse"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.12] text-white font-bold text-base transition-colors"
+          >
+            <MessageCircle class="w-5 h-5 text-emerald-400" />
+            <span>Tester 24h Gratuitement</span>
+          </a>
+        </div>
+
+        <!-- Head-to-Head Comparison Card -->
+        <div class="rounded-3xl bg-[#12141D] border border-white/[0.08] p-6 sm:p-8 shadow-2xl text-left overflow-x-auto">
+          <table class="w-full text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-white/[0.08]">
+                <th class="py-4 px-4 text-gray-400 font-semibold text-left">Fonctionnalité / Condition</th>
+                <th class="py-4 px-4 text-red-400 font-bold text-left">{comparison.competitorName}</th>
+                <th class="py-4 px-4 text-emerald-400 font-extrabold text-left bg-emerald-950/20 rounded-t-xl">IPTV Suisse</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/[0.04]">
+              <tr>
+                <td class="py-4 px-4 text-white font-medium">Tarif Mensuel Équivalent</td>
+                <td class="py-4 px-4 text-red-300 font-semibold">{comparison.competitorPriceMonth} /mois</td>
+                <td class="py-4 px-4 text-emerald-400 font-black text-base bg-emerald-950/20">CHF 4.58 /mois (CHF 55.- /an)</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4 text-white font-medium">Coût Annuel Total</td>
+                <td class="py-4 px-4 text-gray-300">{comparison.competitorPriceYear}</td>
+                <td class="py-4 px-4 text-amber-400 font-extrabold bg-emerald-950/20">CHF 55.- tout inclus</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4 text-white font-medium">Durée d'Engagement</td>
+                <td class="py-4 px-4 text-gray-400">{comparison.competitorCommitment}</td>
+                <td class="py-4 px-4 text-emerald-400 font-bold bg-emerald-950/20">Sans engagement (Liberté totale)</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4 text-white font-medium">Frais de Box TV Matérielle</td>
+                <td class="py-4 px-4 text-gray-400">{comparison.competitorBoxFee}</td>
+                <td class="py-4 px-4 text-emerald-400 font-bold bg-emerald-950/20">CHF 0.- (App sur Smart TV)</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4 text-white font-medium">Suppression Pubs Replay</td>
+                <td class="py-4 px-4 text-gray-400">{comparison.competitorSkipAds}</td>
+                <td class="py-4 px-4 text-emerald-400 font-bold bg-emerald-950/20">Inclus d'office sans supplément</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4 text-white font-medium">Multi-Appareils (Smart TV, Apple TV, Mobile)</td>
+                <td class="py-4 px-4 text-gray-400">Applications limitées ou payantes</td>
+                <td class="py-4 px-4 text-emerald-400 font-bold bg-emerald-950/20">Tous appareils compatibles</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4 text-white font-medium">Garantie Remboursement</td>
+                <td class="py-4 px-4 text-gray-400">Aucune (Frais de résiliation anticipée)</td>
+                <td class="py-4 px-4 text-emerald-400 font-bold bg-emerald-950/20">24h Satisfait ou Remboursé</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Features Grid -->
+    <FeatureGrid />
+
+    <!-- 3. Pricing Card (12-Month CHF 55.- first, NO TWINT) -->
+    <PricingCard />
+
+    <!-- 4. Referrer -->
+    <ReferralBanner />
+
+    <!-- 5. Testimonials -->
+    <UserReviewsSection />
+
+    <!-- 6. Setup Process -->
+    <ProcessSteps />
+
+    <!-- 7. Compatible Devices -->
+    <SupportedDevices />
+
+    <!-- 8. Cities Grid -->
+    <CitiesList />
+
+    <!-- 9. Contact Form -->
+    <ContactForm />
+
+    <!-- 10. FAQ -->
+    <FAQSection />
+
+    <!-- 11. CTA -->
+    <CTASection />
+  </main>
+
+  <Footer />
+  <FloatingWhatsApp />
+  <SocialPopup />
+  <ExitPopup />
+  <GroupsPopup />
+</Layout>

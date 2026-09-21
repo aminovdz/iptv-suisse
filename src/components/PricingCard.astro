@@ -1,0 +1,258 @@
+---
+import { Check, Sparkles, ShieldCheck, MessageCircle, Award, Zap } from 'lucide-astro';
+
+interface Plan {
+  id: string;
+  name: string;
+  duration: string;
+  price: string;
+  monthlyEquivalent: string;
+  savings?: string;
+  featured?: boolean;
+  popularBadge?: string;
+  bonus?: string;
+  features: string[];
+  ctaText: string;
+  whatsappMessage: string;
+}
+
+const plans: Plan[] = [
+  {
+    id: "12-months",
+    name: "12 Mois — Formule Recommandée",
+    duration: "12 Mois",
+    price: "55",
+    monthlyEquivalent: "soit CHF 4.58 / mois",
+    savings: "Économisez plus de 70% vs Câble",
+    featured: true,
+    popularBadge: "MEILLEUR CHOIX · FORMULE SUISSE N°1",
+    bonus: "Bonus : Licence Application Player Premium Offerte",
+    features: [
+      "Flux en Ultra HD 4K & 8K natif à 60 FPS",
+      "Toutes les chaînes suisses (RTS, SRF, RSI) & internationales",
+      "National League Hockey, Ski Alpin & grands championnats",
+      "Technologie Anti-Freeze 9.8™ (Nœuds CDN Genève & Zürich)",
+      "Guide des programmes interactif (EPG) & Replay 7 jours",
+      "Licence Application IPTV Premium incluse",
+      "Compatible Smart TV, Fire Stick, Apple TV, iOS & Android",
+      "Activation instantanée en moins de 2 minutes par WhatsApp",
+      "Support VIP dédié 24/7 en français",
+      "Garantie satisfait ou remboursé 24 heures sans condition"
+    ],
+    ctaText: "Choisir la Formule 12 Mois (CHF 55.-)",
+    whatsappMessage: "Bonjour%2C%20je%20souhaite%20commander%20l%27abonnement%20IPTV%20Suisse%2012%20Mois%20%C3%A0%20CHF%2055.-%20avec%20activation%20imm%C3%A9diate."
+  },
+  {
+    id: "6-months",
+    name: "6 Mois — Formule Populaire",
+    duration: "6 Mois",
+    price: "30",
+    monthlyEquivalent: "soit CHF 5.00 / mois",
+    savings: "Très Populaire",
+    featured: false,
+    popularBadge: "POPULAIRE",
+    bonus: "Bonus : Configuration assistée sur votre appareil",
+    features: [
+      "Qualité Ultra HD 4K & Full HD à 60 FPS",
+      "Chaînes suisses & bouquets sportifs en direct",
+      "Hockey sur glace & sports d'hiver en direct",
+      "Technologie Anti-Freeze 9.8™ anti-coupure",
+      "Guide EPG & Replay disponible",
+      "Multi-appareils (Smart TV, Fire Stick, Mobile, PC)",
+      "Activation express en moins de 2 minutes",
+      "Assistance WhatsApp francophone 24/7",
+      "Garantie satisfait ou remboursé 24 heures"
+    ],
+    ctaText: "Choisir le Pack 6 Mois (CHF 30.-)",
+    whatsappMessage: "Bonjour%2C%20je%20souhaite%20commander%20l%27abonnement%20IPTV%20Suisse%206%20Mois%20%C3%A0%20CHF%2030.-%20avec%20activation%20imm%C3%A9diate."
+  },
+  {
+    id: "3-months",
+    name: "3 Mois — Formule Standard",
+    duration: "3 Mois",
+    price: "20",
+    monthlyEquivalent: "soit CHF 6.66 / mois",
+    savings: "Idéal pour tester sur la durée",
+    featured: false,
+    bonus: "Activation immédiate sans attente",
+    features: [
+      "Diffusion HD & 4K fluide sans coupure",
+      "Chaînes suisses francophones et germanophones",
+      "Tous les sports en direct et VOD inclus",
+      "Serveurs optimisés pour les connexions suisses",
+      "Guide des programmes EPG",
+      "Support technique 7j/7 sur WhatsApp",
+      "Garantie satisfait ou remboursé 24 heures"
+    ],
+    ctaText: "Choisir le Pack 3 Mois (CHF 20.-)",
+    whatsappMessage: "Bonjour%2C%20je%20souhaite%20commander%20l%27abonnement%20IPTV%20Suisse%203%20Mois%20%C3%A0%20CHF%2020.-%20avec%20activation%20imm%C3%A9diate."
+  },
+  {
+    id: "1-month",
+    name: "1 Mois — Formule Découverte",
+    duration: "1 Mois",
+    price: "8",
+    monthlyEquivalent: "Paiement unique CHF 8.-",
+    savings: "Sans Engagement",
+    featured: false,
+    bonus: "Renouvellement manuel sans prélèvement auto",
+    features: [
+      "Accès complet au service en HD et 4K",
+      "Chaînes suisses et internationales",
+      "National League de hockey & sports en direct",
+      "Aucun renouvellement automatique forcé",
+      "Activation rapide en 2 minutes",
+      "Garantie satisfait ou remboursé 24 heures"
+    ],
+    ctaText: "Choisir le Pack 1 Mois (CHF 8.-)",
+    whatsappMessage: "Bonjour%2C%20je%20souhaite%20commander%20l%27abonnement%20IPTV%20Suisse%201%20Mois%20%C3%A0%20CHF%208.-%20avec%20activation%20imm%C3%A9diate."
+  }
+];
+
+const whatsappBaseUrl = "https://wa.me/18036582620?text=";
+---
+
+<section id="pricing" class="py-20 md:py-32 bg-[#090A0F] relative overflow-hidden" aria-labelledby="pricing-heading">
+  <!-- Subtle Background Glows -->
+  <div class="absolute inset-0 pointer-events-none -z-10" aria-hidden="true">
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-gradient-to-r from-[#DC2626]/10 via-[#2563EB]/05 to-[#DC2626]/10 rounded-full blur-[140px]"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DC2626]/10 border border-[#DC2626]/30 text-[#DC2626] text-xs font-bold uppercase tracking-wider mb-4">
+        <Sparkles class="w-3.5 h-3.5 text-[#F59E0B]" />
+        <span>Tarifs Transparents en Francs Suisses (CHF)</span>
+      </div>
+
+      <h2 id="pricing-heading" class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4">
+        Choisissez Votre Abonnement <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#DC2626] to-[#EF4444]">IPTV Suisse</span>
+      </h2>
+
+      <p class="text-gray-300 text-base sm:text-lg font-normal">
+        Sans engagement de durée, sans frais cachés et sans boîtier décodeur requis. Tarifs clairs en CHF avec activation instantanée en moins de 2 minutes.
+      </p>
+    </div>
+
+    <!-- Pricing Cards Grid (Starts with 12-Month Plan Prominently) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+      {plans.map((plan) => (
+        <div class={`relative rounded-3xl flex flex-col justify-between transition-all duration-300 ${
+          plan.featured
+            ? 'bg-gradient-to-b from-[#181B28] via-[#12141D] to-[#0E1017] border-2 border-[#DC2626] shadow-[0_20px_50px_rgba(220,38,38,0.25)] lg:-translate-y-3 z-10'
+            : 'bg-[#12141D]/90 border border-white/[0.08] hover:border-white/[0.2] shadow-xl backdrop-blur-xl'
+        } p-6 sm:p-7`}>
+          
+          <!-- Top Badge for 12-Month Plan -->
+          {plan.featured && (
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap">
+              <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[10px] font-black tracking-wider uppercase bg-gradient-to-r from-[#DC2626] to-[#EF4444] text-white shadow-md shadow-red-900/40">
+                <Award class="w-3.5 h-3.5" />
+                {plan.popularBadge}
+              </span>
+            </div>
+          )}
+
+          <div>
+            <!-- Plan Header -->
+            <div class="mb-5 border-b border-white/[0.08] pb-5">
+              <h3 class="text-lg font-extrabold text-white mb-1">
+                {plan.name}
+              </h3>
+              <p class="text-xs font-medium text-emerald-400">
+                {plan.savings}
+              </p>
+
+              <!-- Price Box -->
+              <div class="mt-4 flex items-baseline gap-1">
+                <span class="text-gray-400 text-sm font-semibold">CHF</span>
+                <span class="text-4xl sm:text-5xl font-black text-white tracking-tight">
+                  {plan.price}.-
+                </span>
+              </div>
+              <p class="text-xs text-gray-400 mt-1 font-medium">
+                {plan.monthlyEquivalent}
+              </p>
+            </div>
+
+            <!-- Bonus Strip -->
+            {plan.bonus && (
+              <div class="mb-5 px-3 py-2 rounded-xl bg-amber-500/10 border border-amber-500/20 text-[11px] font-semibold text-amber-300 flex items-center gap-2">
+                <Sparkles class="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                <span>{plan.bonus}</span>
+              </div>
+            )}
+
+            <!-- Features List -->
+            <ul class="space-y-3 mb-8 text-xs text-gray-300">
+              {plan.features.map((feature) => (
+                <li class="flex items-start gap-2.5">
+                  <div class={`w-4 h-4 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${
+                    plan.featured ? 'bg-[#DC2626]/20 text-[#DC2626]' : 'bg-emerald-500/20 text-emerald-400'
+                  }`}>
+                    <Check class="w-3 h-3 stroke-[3]" />
+                  </div>
+                  <span class="leading-relaxed">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Bottom Action Button -->
+          <div>
+            <a
+              href={`${whatsappBaseUrl}${plan.whatsappMessage}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class={`w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl text-xs sm:text-sm font-black transition-all ${
+                plan.featured
+                  ? 'bg-gradient-to-r from-[#DC2626] to-[#EF4444] text-white hover:from-[#B91C1C] hover:to-[#DC2626] shadow-lg shadow-red-900/30 hover:scale-[1.02]'
+                  : 'bg-[#1E2337] text-white hover:bg-[#252B42] hover:text-gray-100 border border-white/[0.08]'
+              }`}
+              aria-label={`Commander le forfait ${plan.name} à CHF ${plan.price}.-`}
+            >
+              <MessageCircle class="w-4 h-4" />
+              <span>{plan.ctaText}</span>
+            </a>
+
+            <!-- Refund notice per card -->
+            <p class="text-[10px] text-center text-gray-500 mt-2 flex items-center justify-center gap-1">
+              <ShieldCheck class="w-3 h-3 text-emerald-400" />
+              <span>Garantie 24h satisfait ou remboursé</span>
+            </p>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom Trust & Payment Strip (Zero TWINT) -->
+    <div class="mt-16 rounded-2xl bg-[#12141D] border border-white/[0.08] p-6 sm:p-8 text-center max-w-4xl mx-auto">
+      <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs text-gray-300 font-semibold mb-4">
+        <div class="flex items-center gap-2">
+          <Zap class="w-4 h-4 text-[#DC2626]" />
+          <span>Activation Immédiate (Moins de 2 minutes)</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <ShieldCheck class="w-4 h-4 text-emerald-400" />
+          <span>Garantie Satisfait ou Remboursé 24h</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <MessageCircle class="w-4 h-4 text-[#25D366]" />
+          <span>Support WhatsApp 24/7 Dédié</span>
+        </div>
+      </div>
+      <div class="pt-4 border-t border-white/[0.06] flex flex-wrap items-center justify-center gap-2 text-xs text-gray-400">
+        <span class="font-bold text-gray-300">Paiements sécurisés :</span>
+        <span class="bg-[#0B0C10] px-2.5 py-1 rounded border border-white/[0.06]">Carte Bancaire (Visa / Mastercard)</span>
+        <span class="bg-[#0B0C10] px-2.5 py-1 rounded border border-white/[0.06]">PostFinance</span>
+        <span class="bg-[#0B0C10] px-2.5 py-1 rounded border border-white/[0.06]">PayPal</span>
+        <span class="bg-[#0B0C10] px-2.5 py-1 rounded border border-white/[0.06]">Apple Pay</span>
+        <span class="bg-[#0B0C10] px-2.5 py-1 rounded border border-white/[0.06]">Crypto (USDT / BTC)</span>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="80" viewBox="0 0 600 80" fill="none">
+  <!-- Card Background -->
+  <rect width="600" height="80" rx="16" fill="#12141D" stroke="#ffffff" stroke-opacity="0.08"/>
+
+  <!-- Visa -->
+  <g transform="translate(30, 24)">
+    <rect width="70" height="32" rx="6" fill="#1A1F36" stroke="#ffffff" stroke-opacity="0.1"/>
+    <text x="35" y="21" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="900" text-anchor="middle" font-style="italic">VISA</text>
+  </g>
+
+  <!-- Mastercard -->
+  <g transform="translate(120, 24)">
+    <rect width="70" height="32" rx="6" fill="#1A1F36" stroke="#ffffff" stroke-opacity="0.1"/>
+    <circle cx="30" cy="16" r="10" fill="#EB001B" fill-opacity="0.85"/>
+    <circle cx="40" cy="16" r="10" fill="#F79E1B" fill-opacity="0.85"/>
+  </g>
+
+  <!-- PostFinance -->
+  <g transform="translate(210, 24)">
+    <rect width="100" height="32" rx="6" fill="#FFCC00" stroke="#E6B800"/>
+    <text x="50" y="21" fill="#000000" font-family="system-ui, sans-serif" font-size="11" font-weight="900" text-anchor="middle">PostFinance</text>
+  </g>
+
+  <!-- Apple Pay -->
+  <g transform="translate(330, 24)">
+    <rect width="80" height="32" rx="6" fill="#000000" stroke="#ffffff" stroke-opacity="0.2"/>
+    <text x="40" y="21" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle"> Pay</text>
+  </g>
+
+  <!-- PayPal -->
+  <g transform="translate(430, 24)">
+    <rect width="75" height="32" rx="6" fill="#003087" stroke="#ffffff" stroke-opacity="0.1"/>
+    <text x="37" y="21" fill="#0079C1" font-family="system-ui, sans-serif" font-size="12" font-weight="900" text-anchor="middle">Pay<tspan fill="#00457C">Pal</tspan></text>
+  </g>
+
+  <!-- Crypto -->
+  <g transform="translate(525, 24)">
+    <rect width="55" height="32" rx="6" fill="#1A1F36" stroke="#F59E0B" stroke-opacity="0.4"/>
+    <text x="27" y="21" fill="#F59E0B" font-family="system-ui, sans-serif" font-size="11" font-weight="800" text-anchor="middle">USDT</text>
+  </g>
+</svg>

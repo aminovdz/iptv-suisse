@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" rx="24" fill="#0E1018" stroke="#ffffff" stroke-opacity="0.08"/>
+  <circle cx="400" cy="250" r="220" fill="#DC2626" fill-opacity="0.1" filter="blur(70px)"/>
+
+  <!-- Sports Elements -->
+  <!-- Hockey Stick & Puck -->
+  <g transform="translate(180, 140)">
+    <circle cx="60" cy="180" r="24" fill="#1C1F2E" stroke="#DC2626" stroke-width="3"/>
+    <text x="60" y="186" fill="#DC2626" font-family="system-ui, sans-serif" font-size="12" font-weight="900" text-anchor="middle">PUCK</text>
+    <!-- Hockey stick curve -->
+    <path d="M160 20 L80 180 Q60 220 20 220" stroke="#EF4444" stroke-width="8" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Ski Slalom Element (Center) -->
+  <g transform="translate(360, 80)">
+    <!-- Mountain Peak outline -->
+    <path d="M0 240 L80 60 L160 240 Z" fill="#141724" stroke="#ffffff" stroke-opacity="0.1" stroke-width="2"/>
+    <path d="M50 120 L80 60 L110 120 Z" fill="#ffffff" fill-opacity="0.8"/>
+    <!-- Slalom Poles -->
+    <rect x="40" y="140" width="6" height="120" rx="3" fill="#DC2626"/>
+    <polygon points="46,145 76,155 46,165" fill="#DC2626"/>
+    <rect x="120" y="180" width="6" height="120" rx="3" fill="#2563EB"/>
+    <polygon points="126,185 156,195 126,205" fill="#2563EB"/>
+  </g>
+
+  <!-- Football / Ballon (Right) -->
+  <g transform="translate(560, 180)">
+    <circle cx="70" cy="70" r="50" fill="#1A1E2C" stroke="#F59E0B" stroke-width="3"/>
+    <!-- Pentagons -->
+    <polygon points="70,40 85,52 80,68 60,68 55,52" fill="#F59E0B"/>
+    <polygon points="70,100 85,88 80,72 60,72 55,88" fill="#F59E0B" fill-opacity="0.4"/>
+  </g>
+
+  <!-- Text Header -->
+  <text x="400" y="420" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="24" font-weight="900" text-anchor="middle" letter-spacing="-0.02em">
+    SPORT DIRECT SUISSE &amp; INTERNATIONAL EN 4K 60FPS
+  </text>
+  <text x="400" y="455" fill="#9CA3AF" font-family="system-ui, sans-serif" font-size="14" font-weight="500" text-anchor="middle">
+    National League · Ski Alpin FIS · Super League · UEFA Champions League
+  </text>
+</svg>

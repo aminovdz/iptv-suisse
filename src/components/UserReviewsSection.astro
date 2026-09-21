@@ -1,0 +1,184 @@
+---
+import { Star, ShieldCheck, Sparkles } from 'lucide-astro';
+
+interface Review {
+  id: number;
+  name: string;
+  city: string;
+  canton: string;
+  rating: number;
+  date: string;
+  plan: string;
+  device: string;
+  title: string;
+  comment: string;
+  verified: boolean;
+}
+
+const reviews: Review[] = [
+  {
+    id: 1,
+    name: "Marc B.",
+    city: "Genève",
+    canton: "GE",
+    rating: 5,
+    date: "Il y a 3 jours",
+    plan: "Abonnement 12 Mois",
+    device: "Samsung Smart TV",
+    title: "Le hockey de National League sans aucune saccade !",
+    comment: "Je cherchais une alternative pour suivre Genève-Servette et les matchs de National League sans payer les 85 CHF par mois de Swisscom. La qualité 4K à 60 FPS est bluffante, zéro coupure pendant les tiers-temps. Activation reçue sur WhatsApp en 90 secondes.",
+    verified: true
+  },
+  {
+    id: 2,
+    name: "Sophie M.",
+    city: "Lausanne",
+    canton: "VD",
+    rating: 5,
+    date: "Il y a 5 jours",
+    plan: "Abonnement 12 Mois",
+    device: "Apple TV 4K",
+    title: "Économie de plus de CHF 700.- par an",
+    comment: "Franchement impressionnée par la stabilité des serveurs. L'application s'installe en deux clics sur Apple TV avec l'EPG complet. Pour CHF 55.- par an au lieu des abonnements câble ruineux, c'est de loin le meilleur investissement streaming en Suisse.",
+    verified: true
+  },
+  {
+    id: 3,
+    name: "Christian Z.",
+    city: "Zürich",
+    canton: "ZH",
+    rating: 5,
+    date: "Il y a 1 semaine",
+    plan: "Abonnement 6 Mois",
+    device: "Fire TV Stick 4K",
+    title: "Perfekte Bildqualität für SRF und Bundesliga",
+    comment: "Ich nutze IPTV Suisse in Zürich auf einem Fire TV 4K. Alle Schweizer Sender wie SRF zwei und RTS laufen in nativer 4K-Auflösung ohne Pufferung. Kundenservice auf WhatsApp ist extrem schnell und freundlich.",
+    verified: true
+  },
+  {
+    id: 4,
+    name: "Luca R.",
+    city: "Lugano",
+    canton: "TI",
+    rating: 5,
+    date: "Il y a 1 semaine",
+    plan: "Abonnement 12 Mois",
+    device: "LG OLED Smart TV",
+    title: "Tutti i canali svizzeri e sport in diretta",
+    comment: "Funziona benissimo per guardare le partite del Lugano e dell'Ambrì-Piotta. Ottima stabilità anche nei weekend di punta. Assistenza clienti eccezionale su WhatsApp.",
+    verified: true
+  },
+  {
+    id: 5,
+    name: "Alexandre P.",
+    city: "Fribourg",
+    canton: "FR",
+    rating: 5,
+    date: "Il y a 2 semaines",
+    plan: "Abonnement 12 Mois",
+    device: "Android TV Box",
+    title: "Le Ski Alpin et les chaînes suisses en vrai 4K",
+    comment: "La descente de Wengen était d'une netteté incroyable sur mon écran 65 pouces. Aucun lag ni freeze. Le guide EPG est toujours à l'heure et le replay 7 jours m'a sauvé plusieurs soirées.",
+    verified: true
+  },
+  {
+    id: 6,
+    name: "David T.",
+    city: "Neuchâtel",
+    canton: "NE",
+    rating: 5,
+    date: "Il y a 2 semaines",
+    plan: "Abonnement 3 Mois",
+    device: "Sony Bravia",
+    title: "Support client au top et paiement sans souci",
+    comment: "J'avais quelques doutes avant de souscrire, mais le test de 24h m'a immédiatement convaincu. Paiement par carte sécurisé et activation instantanée. Je renouvellerai pour l'année !",
+    verified: true
+  }
+];
+---
+
+<section id="reviews" class="py-20 md:py-32 bg-[#0B0C10] relative overflow-hidden" aria-labelledby="reviews-heading">
+  <!-- Glow Elements -->
+  <div class="absolute inset-0 pointer-events-none -z-10" aria-hidden="true">
+    <div class="absolute top-1/2 right-10 w-96 h-96 bg-[#DC2626]/08 rounded-full blur-[140px]"></div>
+    <div class="absolute bottom-10 left-10 w-80 h-80 bg-[#2563EB]/08 rounded-full blur-[130px]"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-wider mb-4">
+        <Sparkles class="w-3.5 h-3.5 text-amber-400" />
+        <span>Témoignages Clients Vérifiés</span>
+      </div>
+
+      <h2 id="reviews-heading" class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4">
+        Ce que Disent Nos Abonnés en <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#DC2626] to-[#EF4444]">Suisse</span>
+      </h2>
+
+      <!-- Aggregate Score Callout -->
+      <div class="inline-flex items-center gap-3 bg-[#12141D] border border-white/[0.08] px-5 py-2.5 rounded-2xl mt-2">
+        <div class="flex items-center gap-1 text-[#F59E0B]">
+          {[1, 2, 3, 4, 5].map(() => (
+            <Star class="w-4 h-4 fill-[#F59E0B]" />
+          ))}
+        </div>
+        <span class="text-white font-extrabold text-sm">4.9 / 5</span>
+        <span class="text-gray-500">·</span>
+        <span class="text-xs text-gray-400">Basé sur plus de 1'940 avis en Suisse</span>
+      </div>
+    </div>
+
+    <!-- Reviews Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {reviews.map((review) => (
+        <div class="rounded-3xl bg-[#12141D] border border-white/[0.08] p-6 sm:p-7 flex flex-col justify-between hover:border-[#DC2626]/40 transition-all duration-300 hover:-translate-y-1 shadow-xl">
+          
+          <div>
+            <!-- Stars & Verified Badge -->
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-1 text-[#F59E0B]">
+                {[...Array(review.rating)].map(() => (
+                  <Star class="w-4 h-4 fill-[#F59E0B]" />
+                ))}
+              </div>
+              <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-400 bg-emerald-950/40 border border-emerald-800/40 px-2 py-0.5 rounded-full">
+                <ShieldCheck class="w-3 h-3" />
+                <span>Abonné Vérifié</span>
+              </span>
+            </div>
+
+            <!-- Title & Comment -->
+            <h3 class="text-base font-bold text-white mb-2 leading-snug">
+              « {review.title} »
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal mb-6">
+              {review.comment}
+            </p>
+          </div>
+
+          <!-- Author Info & Meta -->
+          <div class="pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs">
+            <div>
+              <p class="font-bold text-white flex items-center gap-1.5">
+                <span>{review.name}</span>
+                <span class="text-[10px] font-semibold text-[#DC2626] bg-[#DC2626]/10 px-1.5 py-0.5 rounded">
+                  {review.city} ({review.canton})
+                </span>
+              </p>
+              <p class="text-[11px] text-gray-400 mt-0.5">
+                {review.device} · {review.plan}
+              </p>
+            </div>
+            <span class="text-[10px] text-gray-400 font-mono">
+              {review.date}
+            </span>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

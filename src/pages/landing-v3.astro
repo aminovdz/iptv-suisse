@@ -1,0 +1,182 @@
+---
+import Layout from '../layouts/Layout.astro';
+import StickyHeader from '../components/StickyHeader.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import PricingCard from '../components/PricingCard.astro';
+import ReferralBanner from '../components/ReferralBanner.astro';
+import UserReviewsSection from '../components/UserReviewsSection.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import SupportedDevices from '../components/SupportedDevices.astro';
+import CitiesList from '../components/CitiesList.astro';
+import ContactForm from '../components/ContactForm.astro';
+import FAQSection from '../components/FAQSection.astro';
+import CTASection from '../components/CTASection.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+import SocialPopup from '../components/SocialPopup.astro';
+import ExitPopup from '../components/ExitPopup.astro';
+import GroupsPopup from '../components/GroupsPopup.astro';
+import { PiggyBank, ArrowRight, MessageCircle, Percent } from 'lucide-astro';
+
+const pageTitle = "Alternative Câble & Box TV Suisse — Économisez plus de CHF 1'000.- par An";
+const pageDescription = "Pourquoi payer CHF 100.-/mois chez les opérateurs traditionnels ? Passez à l'IPTV Suisse 4K pour CHF 4.58/mois (CHF 55.-/an). Sans engagement.";
+const pageKeywords = [
+  "iptv suisse",
+  "alternative swisscom blue tv",
+  "alternative sunrise tv suisse",
+  "resilier abonnement tv suisse",
+  "meilleur iptv suisse",
+  "abonnement iptv suisse pas cher"
+];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonical="/landing-v3"
+  keywords={pageKeywords}
+>
+  <!-- Navigation -->
+  <StickyHeader />
+
+  <main class="min-h-screen pt-28 bg-[#0B0C10] text-gray-200">
+    <!-- 1. Hero: Cord-Cutting Comparison & Annual Household Savings Hook -->
+    <section class="py-16 md:py-24 relative overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none -z-10" aria-hidden="true">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-emerald-500/15 via-[#DC2626]/10 to-transparent rounded-full blur-[140px]"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-black uppercase tracking-wider mb-6">
+          <PiggyBank class="w-4 h-4" />
+          <span>Guide Économies Budget Foyer Suisse 🇨🇭</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] mb-6 max-w-5xl mx-auto">
+          Pourquoi Payer <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500 line-through">CHF 120.-/mois</span> Pour la Télévision en Suisse ?
+        </h1>
+
+        <p class="text-base sm:text-xl text-gray-300 max-w-3xl mx-auto font-normal leading-relaxed mb-10">
+          Rejoignez plus de 15'000 foyers suisses qui ont franchi le pas du cord-cutting avec <strong class="text-white">IPTV Suisse</strong>. Obtenez une qualité 4K Ultra HD supérieure pour seulement <strong class="text-white">CHF 55.- pour l'année entière</strong> (soit CHF 4.58/mois) sans aucun engagement de 24 mois.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+          <a
+            href="#pricing"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-[#DC2626] to-[#EF4444] text-white font-black text-base shadow-xl shadow-red-900/30 hover:scale-[1.02] transition-transform"
+          >
+            <Percent class="w-5 h-5 text-amber-300" />
+            <span>Formule Recommandée 12 Mois (CHF 55.-)</span>
+            <ArrowRight class="w-5 h-5" />
+          </a>
+
+          <a
+            href="https://wa.me/18036582620?text=Bonjour,%20je%20souhaite%20comparer%20mon%20abonnement%20actuel%20avec%20IPTV%20Suisse"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.12] text-white font-bold text-base transition-colors"
+          >
+            <MessageCircle class="w-5 h-5 text-emerald-400" />
+            <span>Demander un Essai 24h Gratuit</span>
+          </a>
+        </div>
+
+        <!-- Real Comparison Table Box -->
+        <div class="max-w-4xl mx-auto rounded-3xl bg-[#12141D] border border-white/[0.08] p-6 sm:p-8 shadow-2xl overflow-x-auto text-left">
+          <h2 class="text-xl sm:text-2xl font-black text-white text-center mb-6">
+            Comparatif Financier Réel sur 12 Mois
+          </h2>
+          <table class="w-full text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-white/[0.08] text-gray-400">
+                <th class="py-3 px-4 text-left font-semibold">Critères</th>
+                <th class="py-3 px-4 text-left font-semibold text-red-400">Opérateur Câble / Télécom Suisse</th>
+                <th class="py-3 px-4 text-left font-semibold text-emerald-400">IPTV Suisse</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/[0.04]">
+              <tr>
+                <td class="py-3.5 px-4 text-white font-medium">Coût annuel moyen</td>
+                <td class="py-3.5 px-4 text-red-400 font-bold">CHF 1'080.- à 1'680.- /an</td>
+                <td class="py-3.5 px-4 text-emerald-400 font-extrabold text-base">CHF 55.- /an (~CHF 4.58/m)</td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-4 text-white font-medium">Frais de location box TV</td>
+                <td class="py-3.5 px-4 text-gray-400">CHF 5.- à 10.- / mois facturés</td>
+                <td class="py-3.5 px-4 text-emerald-400 font-bold">CHF 0.- (Votre Smart TV suffit)</td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-4 text-white font-medium">Engagement contractuel</td>
+                <td class="py-3.5 px-4 text-gray-400">12 à 24 mois bloqués</td>
+                <td class="py-3.5 px-4 text-emerald-400 font-bold">Zéro engagement (Liberté totale)</td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-4 text-white font-medium">Frais d'activation ligne</td>
+                <td class="py-3.5 px-4 text-gray-400">Jusqu'à CHF 99.- à l'ouverture</td>
+                <td class="py-3.5 px-4 text-emerald-400 font-bold">CHF 0.- (Activation en 2 min)</td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-4 text-white font-medium">Économie annuelle nette</td>
+                <td class="py-3.5 px-4 text-gray-500">—</td>
+                <td class="py-3.5 px-4 text-amber-400 font-black text-base">+ CHF 1'025.- à 1'625.- d'économies</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Savings Infographic Illustration -->
+        <div class="mt-10 max-w-3xl mx-auto rounded-3xl overflow-hidden border border-white/[0.08] bg-[#0E1018]/80 p-2 sm:p-4 shadow-2xl">
+          <img
+            src="/images/comparison-savings.svg"
+            alt="Comparatif des économies annuelles abonnement IPTV Suisse"
+            width="800"
+            height="500"
+            loading="lazy"
+            class="w-full h-auto rounded-2xl mx-auto"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Features Grid (Anti-Freeze 9.8™, Swiss ISP bypass, Swiss LDA 19 privacy) -->
+    <FeatureGrid />
+
+    <!-- 3. Pricing Card (12 Mois at CHF 55.- First, No TWINT) -->
+    <PricingCard />
+
+    <!-- 4. Referrer (ReferralBanner: 1 mois offert pour chacun) -->
+    <ReferralBanner />
+
+    <!-- 5. Testimonials (UserReviewsSection: 1940+ Avis Clients Suisses) -->
+    <UserReviewsSection />
+
+    <!-- 6. How to Process (ProcessSteps: 3 étapes en 2 minutes) -->
+    <ProcessSteps />
+
+    <!-- 7. Supported Devices (Smart TV, Apple TV, Fire TV, Android, MAG, PC) -->
+    <SupportedDevices />
+
+    <!-- 8. Cities (CitiesList: Les 16 Villes et Cantons Suisses) -->
+    <CitiesList />
+
+    <!-- 9. Contact (ContactForm: WhatsApp, Telegram & Deux Adresses E-mail) -->
+    <ContactForm />
+
+    <!-- 10. FAQ (FAQSection: Balisage Schema FAQPage & Remboursement 24h) -->
+    <FAQSection />
+
+    <!-- 11. Final Conversion CTA -->
+    <CTASection />
+  </main>
+
+  <!-- Global Footer -->
+  <Footer />
+
+  <!-- Interactive Overlays with 24h localStorage cap -->
+  <FloatingWhatsApp />
+  <SocialPopup />
+  <ExitPopup />
+  <GroupsPopup />
+</Layout>

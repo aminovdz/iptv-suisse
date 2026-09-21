@@ -1,0 +1,58 @@
+---
+import { Gift, ArrowRight, Share2, Sparkles } from 'lucide-astro';
+
+const whatsappShareUrl = "https://api.whatsapp.com/send?text=D%C3%A9couvre%20IPTV%20Suisse%20pour%20regarder%20toutes%20les%20cha%C3%AEnes%20suisses%20et%20le%20sport%20en%204K%20d%C3%A8s%20CHF%208.-%20%3A%20https%3A%2F%2Fiptvsuisse.it.com";
+---
+
+<div class="py-12 bg-gradient-to-r from-[#141824] via-[#0E1018] to-[#141824] border-y border-white/[0.08] relative overflow-hidden" aria-labelledby="referral-banner-heading">
+  <!-- Glowing Background Accent -->
+  <div class="absolute inset-0 pointer-events-none -z-10" aria-hidden="true">
+    <div class="absolute top-1/2 right-1/4 -translate-y-1/2 w-80 h-32 bg-[#DC2626]/15 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-6 bg-[#161926]/90 border border-white/[0.08] rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl">
+      
+      <!-- Left Info -->
+      <div class="flex items-center gap-5">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#DC2626] to-[#EF4444] flex items-center justify-center text-white shrink-0 shadow-lg shadow-red-900/30">
+          <Gift class="w-7 h-7" />
+        </div>
+        <div>
+          <div class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-400 uppercase tracking-wider mb-1">
+            <Sparkles class="w-3.5 h-3.5" />
+            <span>Programme Parrainage Suisse</span>
+          </div>
+          <h3 id="referral-banner-heading" class="text-xl sm:text-2xl font-black text-white tracking-tight">
+            Parrainez un Proche = <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#DC2626] to-[#EF4444]">1 Mois Offert</span> Pour Chacun !
+          </h3>
+          <p class="text-xs sm:text-sm text-gray-300 mt-1 max-w-xl">
+            Partagez votre expérience avec vos amis et collègues en Suisse. Pour chaque nouvel abonné, nous créditons 1 mois supplémentaire sur vos deux comptes.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Action Buttons -->
+      <div class="flex flex-wrap items-center gap-3 w-full lg:w-auto">
+        <a
+          href="/referral"
+          class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-xs sm:text-sm font-bold bg-[#DC2626] hover:bg-[#B91C1C] text-white transition-all shadow-md"
+        >
+          <span>Détails du Programme</span>
+          <ArrowRight class="w-4 h-4" />
+        </a>
+
+        <a
+          href={whatsappShareUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-xs sm:text-sm font-bold bg-[#25D366]/20 border border-[#25D366]/40 text-[#25D366] hover:bg-[#25D366]/30 transition-all"
+        >
+          <Share2 class="w-4 h-4" />
+          <span>Partager sur WhatsApp</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>

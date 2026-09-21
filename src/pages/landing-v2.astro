@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro';
+import StickyHeader from '../components/StickyHeader.astro';
+import LiveScores from '../components/LiveScores.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import PricingCard from '../components/PricingCard.astro';
+import ReferralBanner from '../components/ReferralBanner.astro';
+import UserReviewsSection from '../components/UserReviewsSection.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import SupportedDevices from '../components/SupportedDevices.astro';
+import CitiesList from '../components/CitiesList.astro';
+import ContactForm from '../components/ContactForm.astro';
+import FAQSection from '../components/FAQSection.astro';
+import CTASection from '../components/CTASection.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+import SocialPopup from '../components/SocialPopup.astro';
+import ExitPopup from '../components/ExitPopup.astro';
+import GroupsPopup from '../components/GroupsPopup.astro';
+import { Trophy, ArrowRight, MessageCircle, Flame } from 'lucide-astro';
+
+const pageTitle = "IPTV Suisse Sport Direct 4K 60FPS — National League, Ski Alpin & Football";
+const pageDescription = "Vivez tout le sport suisse et international en 4K Ultra HD à 60 FPS sans coupure. National League, Coupe du Monde de Ski, Super League dès CHF 8.-";
+const pageKeywords = [
+  "iptv suisse",
+  "iptv suisse sport",
+  "national league iptv suisse",
+  "ski alpin streaming suisse",
+  "iptv hockey suisse 4k",
+  "meilleur iptv suisse",
+  "abonnement iptv suisse"
+];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonical="/landing-v2"
+  keywords={pageKeywords}
+>
+  <!-- Navigation Header -->
+  <StickyHeader />
+
+  <main class="min-h-screen pt-28 bg-[#0B0C10] text-gray-200">
+    <!-- 1. Hero: Sports-focused H1 & 60 FPS Hook -->
+    <section class="py-16 md:py-24 relative overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none -z-10" aria-hidden="true">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-[#DC2626]/20 via-[#2563EB]/10 to-transparent rounded-full blur-[140px]"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DC2626]/10 border border-[#DC2626]/30 text-[#DC2626] text-xs font-black uppercase tracking-wider mb-6">
+          <Flame class="w-4 h-4 text-amber-400 fill-amber-400" />
+          <span>Édition Sport Direct Suisse Romande &amp; Alémanique 🇨🇭</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] mb-6 max-w-5xl mx-auto">
+          L'Abonnement <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#DC2626] via-[#EF4444] to-[#F59E0B]">IPTV Suisse</span> Ultime Pour la National League &amp; le Ski en 4K 60FPS
+        </h1>
+
+        <p class="text-base sm:text-xl text-gray-300 max-w-3xl mx-auto font-normal leading-relaxed mb-10">
+          La technologie <strong class="text-white">Anti-Freeze 9.8™</strong> spécialement calibrée pour les soirs de playoffs de hockey suisse et les descentes de Coupe du monde. Aucune micro-coupure, zéro latence face aux câblo-opérateurs et fluidité broadcast 60 FPS native.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+          <a
+            href="#pricing"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-[#DC2626] to-[#EF4444] text-white font-black text-base shadow-xl shadow-red-900/30 hover:scale-[1.02] transition-transform"
+          >
+            <Trophy class="w-5 h-5 text-amber-300" />
+            <span>Formule Recommandée 12 Mois (CHF 55.-)</span>
+            <ArrowRight class="w-5 h-5" />
+          </a>
+
+          <a
+            href="https://wa.me/18036582620?text=Bonjour,%20je%20souhaite%20tester%20le%20flux%20sport%20IPTV%20Suisse%20en%204K%20pendant%2024h"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.12] text-white font-bold text-base transition-colors"
+          >
+            <MessageCircle class="w-5 h-5 text-emerald-400" />
+            <span>Essai Sport 24h Gratuit WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Sport Metrics Strip -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-center">
+          <div class="p-4 rounded-2xl bg-[#12141D] border border-white/[0.06]">
+            <span class="text-2xl sm:text-3xl font-black text-[#DC2626]">60 FPS</span>
+            <p class="text-xs text-gray-400 font-medium mt-1">Palet et ski ultra-nets</p>
+          </div>
+          <div class="p-4 rounded-2xl bg-[#12141D] border border-white/[0.06]">
+            <span class="text-2xl sm:text-3xl font-black text-white">4K UHD</span>
+            <p class="text-xs text-gray-400 font-medium mt-1">Netteté cristal sans compression</p>
+          </div>
+          <div class="p-4 rounded-2xl bg-[#12141D] border border-white/[0.06]">
+            <span class="text-2xl sm:text-3xl font-black text-[#60A5FA]">3 Langues</span>
+            <p class="text-xs text-gray-400 font-medium mt-1">Commentaires RTS, SRF &amp; RSI</p>
+          </div>
+          <div class="p-4 rounded-2xl bg-[#12141D] border border-white/[0.06]">
+            <span class="text-2xl sm:text-3xl font-black text-amber-400">0 Coupure</span>
+            <p class="text-xs text-gray-400 font-medium mt-1">Serveurs locaux Swisscom &amp; Salt</p>
+          </div>
+        </div>
+
+        <!-- Sports Visual Illustration -->
+        <div class="mt-12 max-w-3xl mx-auto rounded-3xl overflow-hidden border border-white/[0.08] bg-[#0E1018]/80 p-2 sm:p-4 shadow-2xl">
+          <img
+            src="/images/swiss-sports.svg"
+            alt="Retransmission en direct sport suisse et National League IPTV Suisse"
+            width="800"
+            height="500"
+            loading="lazy"
+            class="w-full h-auto rounded-2xl mx-auto"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Sports Live Tracker Center -->
+    <LiveScores />
+
+    <!-- 2. Features Grid (Anti-Freeze 9.8™, Swiss ISP bypass, Swiss LDA 19 privacy) -->
+    <FeatureGrid />
+
+    <!-- 3. Pricing Card (12 Mois at CHF 55.- First, No TWINT) -->
+    <PricingCard />
+
+    <!-- 4. Referrer (ReferralBanner: 1 mois offert pour chacun) -->
+    <ReferralBanner />
+
+    <!-- 5. Testimonials (UserReviewsSection: 1940+ Avis Clients Suisses) -->
+    <UserReviewsSection />
+
+    <!-- 6. How to Process (ProcessSteps: 3 étapes en 2 minutes) -->
+    <ProcessSteps />
+
+    <!-- 7. Supported Devices (Smart TV, Apple TV, Fire TV, Android, MAG, PC) -->
+    <SupportedDevices />
+
+    <!-- 8. Cities (CitiesList: Les 16 Villes et Cantons Suisses) -->
+    <CitiesList />
+
+    <!-- 9. Contact (ContactForm: WhatsApp, Telegram & Deux Adresses E-mail) -->
+    <ContactForm />
+
+    <!-- 10. FAQ (FAQSection: Balisage Schema FAQPage & Remboursement 24h) -->
+    <FAQSection />
+
+    <!-- 11. Final Conversion CTA -->
+    <CTASection />
+  </main>
+
+  <!-- Global Footer -->
+  <Footer />
+
+  <!-- Interactive Overlays with 24h localStorage cap -->
+  <FloatingWhatsApp />
+  <SocialPopup />
+  <ExitPopup />
+  <GroupsPopup />
+</Layout>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" rx="24" fill="#0E1018" stroke="#ffffff" stroke-opacity="0.08"/>
+  <circle cx="400" cy="250" r="220" fill="#DC2626" fill-opacity="0.08" filter="blur(60px)"/>
+
+  <!-- Smart TV Frame (Center) -->
+  <g transform="translate(180, 70)">
+    <rect width="440" height="260" rx="16" fill="#161926" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+    <!-- Screen Content -->
+    <rect x="12" y="12" width="416" height="236" rx="8" fill="#0B0C10"/>
+    <circle cx="220" cy="130" r="40" fill="#DC2626" fill-opacity="0.2"/>
+    <!-- Play Icon -->
+    <polygon points="212,115 235,130 212,145" fill="#EF4444"/>
+    <!-- TV Stand -->
+    <path d="M190 260 L180 290 H260 L250 260 Z" fill="#202436"/>
+    <rect x="150" y="290" width="140" height="8" rx="4" fill="#2E344D"/>
+    <!-- 4K Badge -->
+    <rect x="360" y="24" width="56" height="24" rx="6" fill="#DC2626"/>
+    <text x="388" y="40" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="900" text-anchor="middle">4K 60FPS</text>
+  </g>
+
+  <!-- Tablet / iPad (Left Foreground) -->
+  <g transform="translate(100, 220)">
+    <rect width="180" height="230" rx="14" fill="#141724" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+    <rect x="10" y="14" width="160" height="202" rx="6" fill="#08090D"/>
+    <circle cx="90" cy="115" r="20" fill="#2563EB" fill-opacity="0.3"/>
+    <polygon points="86,106 98,115 86,124" fill="#60A5FA"/>
+  </g>
+
+  <!-- Smartphone (Right Foreground) -->
+  <g transform="translate(540, 240)">
+    <rect width="110" height="210" rx="18" fill="#141724" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2"/>
+    <rect x="6" y="10" width="98" height="190" rx="10" fill="#08090D"/>
+    <!-- Camera Notch -->
+    <rect x="40" y="14" width="30" height="5" rx="2.5" fill="#202436"/>
+    <circle cx="55" cy="105" r="16" fill="#F59E0B" fill-opacity="0.3"/>
+    <polygon points="52,98 62,105 52,112" fill="#FBBF24"/>
+  </g>
+
+  <!-- Bottom Labels -->
+  <text x="400" y="470" fill="#9CA3AF" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle" letter-spacing="0.05em">
+    COMPATIBLE SMART TV · APPLE TV · FIRE TV · ANDROID &amp; IOS
+  </text>
+</svg>

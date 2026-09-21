@@ -1,0 +1,145 @@
+---
+import { Zap, Tv, Clock, Headphones, Wifi, Film, Sparkles, Lock, Smartphone, ShieldCheck } from 'lucide-astro';
+
+const features = [
+  {
+    icon: Zap,
+    title: "Technologie Anti-Freeze 9.8™",
+    description: "Des serveurs CDN à très haut débit implantés pour la Suisse garantissent une fluidité absolue sans coupure, même lors des matchs sous haute affluence de National League ou de Coupe du monde.",
+    badge: "99.9% Stabilité",
+    color: "crimson"
+  },
+  {
+    icon: Tv,
+    title: "4K & 8K Ultra HD à 60 FPS Réels",
+    description: "Profitez de vos programmes, du ski alpin et de vos films avec un taux de rafraîchissement natif de 60 images par seconde, des couleurs HDR éclatantes et un son Dolby surround immersif.",
+    badge: "60 FPS Natif",
+    color: "blue"
+  },
+  {
+    icon: Wifi,
+    title: "Zéro Bridage FAI Suisse",
+    description: "Notre protocole de routage sécurisé contourne tout bridage de bande passante (traffic shaping) des opérateurs télécoms suisses comme Swisscom, Sunrise, Salt et Wingo.",
+    badge: "100% Débit Libre",
+    color: "crimson"
+  },
+  {
+    icon: Clock,
+    title: "Activation en Moins de 2 Minutes",
+    description: "Recevez vos identifiants de connexion Xtream Codes et vos liens M3U immédiatement après commande directement sur WhatsApp ou par courriel électronique.",
+    badge: "Instantané",
+    color: "blue"
+  },
+  {
+    icon: Film,
+    title: "Guide EPG & Replay 7 Jours",
+    description: "Un guide électronique des programmes (EPG) complet pour ne rien manquer, complété par une fonction de rattrapage (Catch-Up / Replay) jusqu'à 7 jours en arrière.",
+    badge: "Replay Inclus",
+    color: "crimson"
+  },
+  {
+    icon: Lock,
+    title: "Confidentialité & Respect Art. 19 LDA",
+    description: "Connexion chiffrée SSL 256-bit assurant un anonymat complet. En Suisse, la réception et l'usage privé de contenus en streaming sont protégés par le cadre légal suisse.",
+    badge: "100% Sécurisé",
+    color: "blue"
+  },
+  {
+    icon: Smartphone,
+    title: "Compatible Tous vos Appareils",
+    description: "Fonctionne sans décodeur sur Smart TV (Samsung, LG, Sony), boîtier Amazon Fire TV Stick, Apple TV, Android Box, smartphones iOS et Android, PC et MAG.",
+    badge: "Multi-Écrans",
+    color: "crimson"
+  },
+  {
+    icon: Headphones,
+    title: "Support Client Suisse 24/7 sur WhatsApp",
+    description: "Une équipe francophone dévouée et réactive disponible 7j/7 pour vous assister en direct lors de la configuration et répondre à toutes vos questions.",
+    badge: "WhatsApp Direct",
+    color: "blue"
+  }
+];
+---
+
+<section id="features" class="py-20 md:py-32 bg-[#0B0C10] relative" aria-labelledby="features-heading">
+  <!-- Top Subtle Separator -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center">
+    
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DC2626]/10 border border-[#DC2626]/30 text-[#DC2626] text-xs font-bold uppercase tracking-wider mb-4">
+      <Sparkles class="w-3.5 h-3.5 text-[#F59E0B]" />
+      <span>Infrastructure Haut de Gamme</span>
+    </div>
+
+    <h2 id="features-heading" class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4">
+      Pourquoi Choisir <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#DC2626] to-[#EF4444]">IPTV Suisse</span> ?
+    </h2>
+
+    <p class="text-gray-300 text-base sm:text-lg max-w-3xl mx-auto font-normal">
+      Une technologie conçue pour les utilisateurs exigeants : fluidité irréprochable, qualité d'image cinématographique et service client disponible en continu.
+    </p>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {features.map((item) => (
+        <div class="group relative rounded-2xl bg-[#12141D] border border-white/[0.08] p-6 hover:border-[#DC2626]/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(220,38,38,0.15)] flex flex-col justify-between">
+          
+          <div>
+            <!-- Badge & Icon -->
+            <div class="flex items-center justify-between mb-5">
+              <div class={`w-12 h-12 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110 duration-300 ${
+                item.color === 'crimson' 
+                  ? 'bg-[#DC2626]/15 border border-[#DC2626]/30 text-[#DC2626]' 
+                  : 'bg-[#2563EB]/15 border border-[#2563EB]/30 text-[#2563EB]'
+              }`}>
+                <item.icon class="w-6 h-6" />
+              </div>
+              <span class={`text-[10px] font-bold px-2.5 py-1 rounded-full border ${
+                item.color === 'crimson'
+                  ? 'bg-[#DC2626]/10 text-[#DC2626] border-[#DC2626]/25'
+                  : 'bg-[#2563EB]/10 text-[#3B82F6] border-[#2563EB]/25'
+              }`}>
+                {item.badge}
+              </span>
+            </div>
+
+            <!-- Title & Description -->
+            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-gray-100">
+              {item.title}
+            </h3>
+            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+              {item.description}
+            </p>
+          </div>
+
+          <!-- Bottom Micro Glow Line -->
+          <div class="w-full h-0.5 bg-gradient-to-r from-transparent via-white/[0.08] to-transparent mt-6 group-hover:via-[#DC2626] transition-colors"></div>
+
+        </div>
+      ))}
+    </div>
+
+    <!-- Quick CTA Banner inside Features -->
+    <div class="mt-12 rounded-2xl bg-gradient-to-r from-[#161824] via-[#12141D] to-[#161824] border border-white/[0.08] p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-xl bg-[#10B981]/15 border border-[#10B981]/30 flex items-center justify-center text-[#10B981] shrink-0">
+          <ShieldCheck class="w-6 h-6" />
+        </div>
+        <div>
+          <h4 class="text-base font-bold text-white">Prêt à tester sans aucun risque ?</h4>
+          <p class="text-xs sm:text-sm text-gray-400">Demandez votre test gratuit de 24 heures et constatez la stabilité de vos flux.</p>
+        </div>
+      </div>
+      <a
+        href="https://wa.me/18036582620?text=Bonjour%2C%20je%20souhaite%20un%20test%20gratuit%20de%2024h%20IPTV%20Suisse."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs sm:text-sm font-bold bg-[#25D366] text-slate-950 hover:bg-[#1EBE5D] transition-all shrink-0 shadow-lg shadow-green-900/20"
+      >
+        <Headphones class="w-4 h-4 text-slate-950" />
+        <span>Tester Gratuitement sur WhatsApp</span>
+      </a>
+    </div>
+
+  </div>
+</section>

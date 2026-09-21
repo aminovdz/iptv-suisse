@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+import StickyHeader from '../components/StickyHeader.astro';
+import Footer from '../components/Footer.astro';
+import { ShieldAlert, FileText, Send, CheckCircle2, AlertOctagon } from 'lucide-astro';
+
+const pageTitle = "Politique Droits d'Auteur & Procédure DMCA - IPTV Suisse";
+const pageDescription = "Procédure de notification de violation de droits d'auteur et avis DMCA pour la plateforme IPTV Suisse.";
+---
+
+<Layout title={pageTitle} description={pageDescription} canonical="/dmca">
+  <StickyHeader />
+
+  <main class="min-h-screen pt-32 pb-24 bg-[#0B0C10] text-gray-300">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="border-b border-white/[0.08] pb-10 mb-12">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
+          <ShieldAlert class="w-4 h-4" />
+          <span>Propriété Intellectuelle & Conformité</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4">
+          Politique DMCA & Droits d'Auteur
+        </h1>
+        <p class="text-sm sm:text-base text-gray-400">
+          IPTV Suisse respecte les droits de propriété intellectuelle des créateurs et des ayants droit. Nous appliquons une procédure stricte de traitement des signalements conformément aux standards internationaux et au droit suisse.
+        </p>
+      </div>
+
+      <!-- Content -->
+      <div class="space-y-10 text-sm sm:text-base leading-relaxed">
+        <!-- Section 1 -->
+        <section class="rounded-3xl bg-[#12141D] border border-white/[0.08] p-6 sm:p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <AlertOctagon class="w-6 h-6 text-[#DC2626]" />
+            <h2 class="text-xl sm:text-2xl font-bold text-white">1. Nature Technique du Service</h2>
+          </div>
+          <p class="mb-4">
+            IPTV Suisse n'héberge, ne produit et ne télécharge aucun fichier vidéo ou flux audiovisuel sur ses propres serveurs informatiques. La plateforme agit exclusivement en qualité d'opérateur de réseau technique, fournissant des liens d'acheminement réseau, des métadonnées de guidage électronique de programmes (EPG) et des index M3U vers des serveurs distants gérés par des tiers.
+          </p>
+          <p>
+            Nous ne stockons aucun média protégé sur notre infrastructure physique hébergée en Suisse ou en Europe.
+          </p>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="rounded-3xl bg-[#12141D] border border-white/[0.08] p-6 sm:p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <FileText class="w-6 h-6 text-[#DC2626]" />
+            <h2 class="text-xl sm:text-2xl font-bold text-white">2. Procédure de Notification (Notice & Takedown)</h2>
+          </div>
+          <p class="mb-4">
+            Si vous êtes titulaire légal de droits d'auteur ou mandataire dûment habilité et que vous estimez qu'un contenu référencé enfreint vos droits exclusifs, veuillez nous transmettre une notification formelle comprenant impérativement les éléments suivants :
+          </p>
+          <ul class="space-y-2.5 mb-4">
+            <li class="flex items-start gap-2.5">
+              <CheckCircle2 class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+              <span><strong class="text-white">Identité du demandeur :</strong> Nom complet, raison sociale de l'ayant droit, adresse physique, numéro de téléphone et adresse e-mail officielle.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <CheckCircle2 class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+              <span><strong class="text-white">Identification de l'œuvre :</strong> Description précise de l'œuvre protégée faisant l'objet de la violation alléguée.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <CheckCircle2 class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+              <span><strong class="text-white">Localisation du contenu :</strong> L'URL exacte du flux ou l'identifiant technique de la chaîne contestée sur notre passerelle.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <CheckCircle2 class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+              <span><strong class="text-white">Attestation sur l'honneur :</strong> Déclaration certifiant de bonne foi que l'utilisation du matériel n'est pas autorisée par le titulaire du droit, son agent ou la loi.</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="rounded-3xl bg-[#12141D] border border-white/[0.08] p-6 sm:p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <Send class="w-6 h-6 text-[#DC2626]" />
+            <h2 class="text-xl sm:text-2xl font-bold text-white">3. Adresse de Notification & Délais de Traitement</h2>
+          </div>
+          <p class="mb-4">
+            Toute réclamation conforme est traitée avec la plus grande diligence par notre équipe juridique dans un délai maximal de 24 à 48 heures ouvrables suivant sa réception.
+          </p>
+          <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.08]">
+            <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold mb-1">Bureau Juridique & DMCA :</p>
+            <p class="text-white font-bold text-lg mb-1">contact@iptvsuisse.it.com</p>
+            <p class="text-xs text-gray-400">Copie obligatoire : support@castvera.com</p>
+            <p class="text-xs text-gray-500 mt-3">Objet impératif du message : [DMCA Notice] - Nom de l'œuvre / Titulaire</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

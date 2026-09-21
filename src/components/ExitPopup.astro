@@ -1,0 +1,171 @@
+---
+import { MessageCircle, X, Clock, Gift, ShieldCheck } from 'lucide-astro';
+
+const whatsappOfferUrl = "https://wa.me/18036582620?text=Bonjour%21%20Je%20souhaite%20profiter%20de%20l%27offre%20sp%C3%A9ciale%20IPTV%20Suisse%20%3A%20Souscrire%20maintenant%20et%20obtenir%201%20mois%20offert%20gratuitement%20%21";
+---
+
+<div
+  id="exit-popup"
+  class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4 transition-all duration-300 opacity-0"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="exit-popup-title"
+>
+  <div class="relative w-full max-w-lg rounded-3xl bg-gradient-to-b from-[#1C1217] via-[#14121A] to-[#0B0C10] border-2 border-[#DC2626]/60 p-6 sm:p-8 shadow-[0_0_50px_rgba(220,38,38,0.35)] text-center transform scale-95 transition-transform duration-300 overflow-hidden">
+    
+    <!-- Top Ambient Accent -->
+    <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-64 h-32 bg-[#DC2626]/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+    <!-- Close Button -->
+    <button
+      id="close-exit-popup"
+      type="button"
+      class="absolute top-4 right-4 p-2 rounded-full text-gray-400 hover:text-white bg-white/5 hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
+      aria-label="Fermer l'offre"
+    >
+      <X class="w-5 h-5" />
+    </button>
+
+    <!-- Gift Icon Emblem -->
+    <div class="mx-auto mb-4 w-16 h-16 rounded-2xl bg-gradient-to-br from-[#DC2626] to-[#991B1B] flex items-center justify-center shadow-[0_0_25px_rgba(220,38,38,0.5)]">
+      <Gift class="w-8 h-8 text-white" />
+    </div>
+
+    <!-- Urgency Badge -->
+    <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#DC2626]/20 border border-[#DC2626]/40 text-[#DC2626] text-[11px] font-black uppercase tracking-wider mb-3">
+      <Clock class="w-3.5 h-3.5" />
+      <span>Offre Spéciale Dernière Chance</span>
+    </div>
+
+    <!-- Main Title -->
+    <h2 id="exit-popup-title" class="text-2xl sm:text-3xl font-black text-white tracking-tight mb-2">
+      Attendez ! Ne Partez Pas Sans Votre Bonus
+    </h2>
+
+    <!-- Mandatory Offer Requirement -->
+    <p class="text-lg sm:text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#DC2626] via-[#EF4444] to-[#F59E0B] mb-3">
+      Souscrivez maintenant et profitez de 1 mois offert !
+    </p>
+
+    <p class="text-xs sm:text-sm text-gray-300 leading-relaxed mb-6">
+      Obtenez un accès immédiat à toutes les chaînes suisses et au sport en 4K Ultra HD avec Anti-Freeze 9.8™ et guide EPG complet.
+    </p>
+
+    <!-- Highlights Checklist -->
+    <div class="bg-black/40 rounded-2xl p-3.5 border border-white/5 mb-6 text-xs text-gray-300 space-y-2 text-left">
+      <div class="flex items-center gap-2">
+        <span class="text-[#10B981] font-bold">✓</span>
+        <span>+1 mois complet de streaming offert ajouté à votre formule</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-[#10B981] font-bold">✓</span>
+        <span>Activation immédiate en moins de 2 minutes sur WhatsApp</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-[#10B981] font-bold">✓</span>
+        <span>Garantie satisfait ou remboursé 24 heures</span>
+      </div>
+    </div>
+
+    <!-- WhatsApp Direct Link -->
+    <a
+      id="exit-popup-cta"
+      href={whatsappOfferUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="w-full inline-flex items-center justify-center gap-2.5 py-4 px-6 rounded-2xl text-sm sm:text-base font-black text-white bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#1EBE5D] hover:to-[#0F7569] shadow-[0_10px_25px_rgba(37,211,102,0.35)] transition-all hover:scale-[1.02]"
+      aria-label="Réclamer 1 mois offert sur WhatsApp"
+    >
+      <MessageCircle class="w-5 h-5 text-white" />
+      <span>Réclamer Mon Mois Offert sur WhatsApp</span>
+    </a>
+
+    <p class="text-[10px] text-gray-400 mt-3 flex items-center justify-center gap-1">
+      <ShieldCheck class="w-3.5 h-3.5 text-emerald-400" />
+      <span>Offre limitée · Valable une seule fois par foyer</span>
+    </p>
+
+  </div>
+</div>
+
+<script>
+  // Strict 24-hour limit using localStorage
+  const POPUP_STORAGE_KEY = 'iptv_suisse_exit_popup_timestamp';
+  const TWENTY_FOUR_HOURS_MS = 24 * 60 * 60 * 1000;
+
+  function shouldShowExitPopup() {
+    try {
+      const lastShown = localStorage.getItem(POPUP_STORAGE_KEY);
+      if (!lastShown) return true;
+      const timeSince = Date.now() - parseInt(lastShown, 10);
+      return timeSince > TWENTY_FOUR_HOURS_MS;
+    } catch (e) {
+      return true;
+    }
+  }
+
+  function markExitPopupAsShown() {
+    try {
+      localStorage.setItem(POPUP_STORAGE_KEY, Date.now().toString());
+    } catch (e) {
+      // ignore
+    }
+  }
+
+  const exitPopup = document.getElementById('exit-popup');
+  const closeBtn = document.getElementById('close-exit-popup');
+  const ctaBtn = document.getElementById('exit-popup-cta');
+
+  let hasTriggered = false;
+
+  function openPopup() {
+    if (hasTriggered || !shouldShowExitPopup() || !exitPopup) return;
+    hasTriggered = true;
+    markExitPopupAsShown();
+
+    exitPopup.classList.remove('hidden');
+    exitPopup.classList.add('flex');
+    setTimeout(() => {
+      exitPopup.classList.remove('opacity-0');
+      exitPopup.classList.add('opacity-100');
+      const innerCard = exitPopup.querySelector('div');
+      if (innerCard) {
+        innerCard.classList.remove('scale-95');
+        innerCard.classList.add('scale-100');
+      }
+    }, 10);
+  }
+
+  function closePopup() {
+    if (!exitPopup) return;
+    exitPopup.classList.remove('opacity-100');
+    exitPopup.classList.add('opacity-0');
+    setTimeout(() => {
+      exitPopup.classList.remove('flex');
+      exitPopup.classList.add('hidden');
+    }, 300);
+  }
+
+  // Desktop Mouseout Trigger (Exit Intent)
+  document.addEventListener('mouseleave', (e) => {
+    if (e.clientY <= 15 && !hasTriggered) {
+      openPopup();
+    }
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closePopup);
+  }
+  if (ctaBtn) {
+    ctaBtn.addEventListener('click', closePopup);
+  }
+
+  // Close on backdrop click
+  if (exitPopup) {
+    exitPopup.addEventListener('click', (e) => {
+      if (e.target === exitPopup) {
+        closePopup();
+      }
+    });
+  }
+</script>

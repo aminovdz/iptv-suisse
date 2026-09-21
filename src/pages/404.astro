@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import StickyHeader from '../components/StickyHeader.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+import { Home, Search, MessageCircle, ArrowRight } from 'lucide-astro';
+
+const pageTitle = "Page Non Trouvée (404) - IPTV Suisse";
+const pageDescription = "La page recherchée n'existe pas ou a été déplacée. Retrouvez vos offres IPTV Suisse en 4K Ultra HD.";
+---
+
+<Layout title={pageTitle} description={pageDescription} canonical="/404">
+  <StickyHeader />
+
+  <main class="min-h-screen pt-36 pb-24 bg-[#0B0C10] flex items-center justify-center relative overflow-hidden">
+    <!-- Glow element -->
+    <div class="absolute inset-0 pointer-events-none -z-10" aria-hidden="true">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#DC2626]/10 rounded-full blur-[140px]"></div>
+    </div>
+
+    <div class="max-w-xl mx-auto px-4 sm:px-6 text-center">
+      <!-- 404 Swiss Shield Badge -->
+      <div class="inline-flex items-center justify-center w-24 h-24 rounded-3xl bg-[#161926] border border-white/[0.08] text-[#DC2626] font-black text-4xl mb-8 shadow-2xl shadow-red-950/40">
+        404
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4">
+        Signal Perdu en Suisse
+      </h1>
+
+      <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-8">
+        La page ou le flux que vous essayez d'atteindre n'existe pas ou a été redirigé vers une nouvelle fréquence. Pas d'inquiétude, nos serveurs 4K continuent de diffuser sans interruption.
+      </p>
+
+      <!-- Quick Nav Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+        <a
+          href="/"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-[#DC2626] hover:bg-[#B91C1C] text-white font-bold text-sm shadow-xl shadow-red-950/40 transition-colors"
+        >
+          <Home class="w-4 h-4" />
+          <span>Retour à l'Accueil</span>
+        </a>
+
+        <a
+          href="/#pricing"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-white/[0.06] hover:bg-white/[0.1] border border-white/[0.1] text-white font-bold text-sm transition-colors"
+        >
+          <span>Voir les Tarifs (dès CHF 8.-)</span>
+          <ArrowRight class="w-4 h-4" />
+        </a>
+      </div>
+
+      <!-- Support Help link -->
+      <div class="p-4 rounded-2xl bg-[#12141D] border border-white/[0.06] inline-flex items-center gap-3 text-xs text-gray-400">
+        <Search class="w-4 h-4 text-gray-400" />
+        <span>Besoin d'aide immédiate ?</span>
+        <a
+          href="https://wa.me/18036582620?text=Bonjour,%20je%20suis%20tombé%20sur%20une%20erreur%20404%20sur%20le%20site%20IPTV%20Suisse"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-[#60A5FA] hover:text-white font-semibold flex items-center gap-1"
+        >
+          <MessageCircle class="w-3.5 h-3.5 text-emerald-400" />
+          <span>Contacter le support</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+  <FloatingWhatsApp />
+</Layout>

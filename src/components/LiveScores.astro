@@ -1,0 +1,171 @@
+---
+import { Activity, Tv } from 'lucide-astro';
+
+interface MatchDisplay {
+  id: number;
+  sport: string;
+  league: string;
+  homeTeam: string;
+  awayTeam: string;
+  scoreHome: number | string | null;
+  scoreAway: number | string | null;
+  status: 'live' | 'upcoming' | 'finished';
+  timeOrDate: string;
+  badge: string;
+  quality: string;
+}
+
+const matches: MatchDisplay[] = [
+  {
+    id: 1,
+    sport: "🏒 Hockey sur Glace",
+    league: "National League Suisse",
+    homeTeam: "Genève-Servette HC",
+    awayTeam: "Lausanne HC",
+    scoreHome: 3,
+    scoreAway: 2,
+    status: "live",
+    timeOrDate: "3ème Tiers · 14:20",
+    badge: "DERBY DU LÉMAN",
+    quality: "4K UHD 60FPS"
+  },
+  {
+    id: 2,
+    sport: "🏒 Hockey sur Glace",
+    league: "National League Suisse",
+    homeTeam: "ZSC Lions",
+    awayTeam: "SC Bern",
+    scoreHome: 4,
+    scoreAway: 3,
+    status: "finished",
+    timeOrDate: "Terminé (T.B.)",
+    badge: "CHOC AU SOMMET",
+    quality: "4K UHD 60FPS"
+  },
+  {
+    id: 3,
+    sport: "⛷️ Ski Alpin",
+    league: "Coupe du Monde FIS",
+    homeTeam: "Descente du Lauberhorn",
+    awayTeam: "Wengen (Suisse)",
+    scoreHome: "1er",
+    scoreAway: "CH",
+    status: "live",
+    timeOrDate: "En Direct · Manche 2",
+    badge: "DIRECT RTS / SRF",
+    quality: "4K HDR"
+  },
+  {
+    id: 4,
+    sport: "⚽ Football",
+    league: "Super League Suisse",
+    homeTeam: "Servette FC",
+    awayTeam: "BSC Young Boys",
+    scoreHome: null,
+    scoreAway: null,
+    status: "upcoming",
+    timeOrDate: "Ce Soir · 20:30",
+    badge: "STADE DE GENÈVE",
+    quality: "4K UHD 60FPS"
+  }
+];
+
+const whatsappTrialUrl = "https://wa.me/18036582620?text=Bonjour%2C%20je%20souhaite%20regarder%20les%20matchs%20de%20National%20League%20sur%20IPTV%20Suisse.";
+---
+
+<section class="py-16 md:py-24 bg-[#0B0C10] border-y border-white/[0.08] relative overflow-hidden" aria-labelledby="livescores-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DC2626]/10 border border-[#DC2626]/30 text-[#DC2626] text-xs font-bold uppercase tracking-wider mb-3">
+          <Activity class="w-3.5 h-3.5 text-[#DC2626] animate-pulse" />
+          <span>Centre Sportif en Direct 🇨🇭</span>
+        </div>
+        <h2 id="livescores-heading" class="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">
+          Suivez la <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#DC2626] to-[#EF4444]">National League & le Ski Alpin</span> en 4K
+        </h2>
+        <p class="text-xs sm:text-sm text-gray-400 mt-2 max-w-2xl">
+          Flux officiels haute fidélité avec commentaires en français et allemand. Fini les coupures pendant les grands derbys suisses.
+        </p>
+      </div>
+
+      <a
+        href={whatsappTrialUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold bg-[#DC2626] hover:bg-[#B91C1C] text-white transition-all shrink-0 shadow-lg shadow-red-900/30"
+      >
+        <Tv class="w-4 h-4" />
+        <span>Tester les Flux Sportifs</span>
+      </a>
+    </div>
+
+    <!-- Live Matches Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      {matches.map((match) => (
+        <div class="rounded-2xl bg-[#12141D] border border-white/[0.08] p-5 hover:border-[#DC2626]/40 transition-all duration-300 shadow-xl flex flex-col justify-between">
+          
+          <div>
+            <!-- Top Sport & Status Row -->
+            <div class="flex items-center justify-between text-[11px] font-bold mb-3">
+              <span class="text-gray-400">{match.sport}</span>
+              
+              {match.status === 'live' && (
+                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#DC2626]/15 text-[#DC2626] border border-[#DC2626]/30">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#DC2626] animate-ping"></span>
+                  EN DIRECT
+                </span>
+              )}
+              {match.status === 'upcoming' && (
+                <span class="text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-full border border-amber-400/20">
+                  À VENIR
+                </span>
+              )}
+              {match.status === 'finished' && (
+                <span class="text-gray-400 bg-white/5 px-2 py-0.5 rounded-full">
+                  TERMINÉ
+                </span>
+              )}
+            </div>
+
+            <p class="text-[10px] text-gray-500 uppercase tracking-wider font-semibold mb-2">
+              {match.league} · {match.badge}
+            </p>
+
+            <!-- Teams & Score Area -->
+            <div class="space-y-2 py-2">
+              <div class="flex items-center justify-between">
+                <span class="text-sm font-bold text-white truncate max-w-[170px]">
+                  {match.homeTeam}
+                </span>
+                <span class="font-mono text-base font-black text-white">
+                  {match.scoreHome !== null ? match.scoreHome : '-'}
+                </span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-sm font-bold text-white truncate max-w-[170px]">
+                  {match.awayTeam}
+                </span>
+                <span class="font-mono text-base font-black text-white">
+                  {match.scoreAway !== null ? match.scoreAway : '-'}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Time & Quality Tag -->
+          <div class="pt-3 mt-3 border-t border-white/[0.06] flex items-center justify-between text-[11px]">
+            <span class="text-gray-400">{match.timeOrDate}</span>
+            <span class="font-bold text-emerald-400 bg-emerald-950/30 px-1.5 py-0.5 rounded border border-emerald-800/30">
+              {match.quality}
+            </span>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

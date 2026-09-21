@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+import StickyHeader from '../components/StickyHeader.astro';
+import Footer from '../components/Footer.astro';
+import { ShieldCheck, Scale, AlertCircle, Info, CheckCircle2 } from 'lucide-astro';
+
+const pageTitle = "Avertissement Légal & Cadre Juridique Suisse (LDA Art. 19) - IPTV Suisse";
+const pageDescription = "Consultez l'avertissement légal d'IPTV Suisse. Analyse de la législation suisse sur le droit d'auteur et l'usage privé (LDA Art. 19).";
+---
+
+<Layout title={pageTitle} description={pageDescription} canonical="/disclaimer">
+  <StickyHeader />
+
+  <main class="min-h-screen pt-32 pb-24 bg-[#0B0C10] text-gray-300">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="border-b border-white/[0.08] pb-10 mb-12">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-wider mb-4">
+          <Scale class="w-4 h-4" />
+          <span>Cadre Juridique Helvétique</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4">
+          Avertissement Légal
+        </h1>
+        <p class="text-sm sm:text-base text-gray-400">
+          Informations réglementaires concernant la transmission de flux de données et la spécificité de la législation suisse en matière de propriété intellectuelle.
+        </p>
+      </div>
+
+      <!-- Content -->
+      <div class="space-y-10 text-sm sm:text-base leading-relaxed">
+        <!-- Section 1 -->
+        <section class="rounded-3xl bg-[#12141D] border border-white/[0.08] p-6 sm:p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <ShieldCheck class="w-6 h-6 text-[#DC2626]" />
+            <h2 class="text-xl sm:text-2xl font-bold text-white">1. Spécificité du Droit Suisse (LDA Art. 19)</h2>
+          </div>
+          <p class="mb-4">
+            Contrairement à la législation en vigueur dans plusieurs pays de l'Union Européenne, le droit suisse présente une spécificité reconnue au travers de l'article 19 de la <strong>Loi fédérale sur le droit d'auteur et les droits voisins (LDA)</strong>.
+          </p>
+          <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.08] mb-4">
+            <blockquote class="italic text-gray-200 text-sm leading-relaxed">
+              « L'utilisation d'une œuvre divulguée à des fins personnelles est licite. Par utilisation à des fins personnelles, on entend toute utilisation d'une œuvre dans le cercle de personnes étroitement liées, telles que des parents ou des amis. »
+            </blockquote>
+            <p class="text-xs text-[#DC2626] font-bold mt-2">— LDA, Art. 19, alinéa 1, let. a</p>
+          </div>
+          <p>
+            En Suisse, le simple visionnage en streaming par un consommateur final à des fins strictement privées ne constitue pas un acte de contrefaçon pénalement répréhensible, tant qu'il n'y a pas d'acte de mise à disposition publique, d'hébergement ou de redistribution (notamment via les protocoles de type peer-to-peer / torrents).
+          </p>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="rounded-3xl bg-[#12141D] border border-white/[0.08] p-6 sm:p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <AlertCircle class="w-6 h-6 text-amber-400" />
+            <h2 class="text-xl sm:text-2xl font-bold text-white">2. Responsabilité de l'Utilisateur Final</h2>
+          </div>
+          <p class="mb-4">
+            L'utilisateur du site <strong class="text-white">iptvsuisse.it.com</strong> demeure seul responsable de l'usage qu'il fait de la passerelle technique et du respect des lois applicables dans son pays de résidence effective :
+          </p>
+          <ul class="space-y-2.5">
+            <li class="flex items-start gap-2.5">
+              <CheckCircle2 class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+              <span>L'accès est réservé aux personnes physiques majeures selon le droit civil de leur juridiction.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <CheckCircle2 class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+              <span>Si vous accédez à notre service depuis un pays tiers hors de Suisse (ex. voyages à l'étranger), vous devez vérifier la conformité avec la réglementation locale en vigueur.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <CheckCircle2 class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+              <span>IPTV Suisse décline toute responsabilité en cas de détournement d'usage ou d'utilisation à des fins commerciales publiques.</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="rounded-3xl bg-[#12141D] border border-white/[0.08] p-6 sm:p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <Info class="w-6 h-6 text-[#DC2626]" />
+            <h2 class="text-xl sm:text-2xl font-bold text-white">3. Absence de Marques Commerciales Tiers</h2>
+          </div>
+          <p class="mb-4">
+            Tous les noms de produits, logos et marques tierces éventuellement mentionnés sur ce site ou dans les applications compatibles appartiennent à leurs propriétaires respectifs. Leur mention éventuelle à titre purement descriptif n'implique aucune affiliation, parrainage ni approbation de leur part.
+          </p>
+          <p>
+            IPTV Suisse est un service indépendant spécialisé dans les protocoles de transport vidéo IP à haute disponibilité.
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

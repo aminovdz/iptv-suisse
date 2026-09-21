@@ -1,0 +1,178 @@
+---
+import { MapPin, ArrowRight, Sparkles } from 'lucide-astro';
+
+interface City {
+  name: string;
+  slug: string;
+  canton: string;
+  population: string;
+  region: string;
+  description: string;
+}
+
+const cities: City[] = [
+  {
+    name: "Genève",
+    slug: "geneve",
+    canton: "Genève (GE)",
+    population: "203'000 hab.",
+    region: "Suisse Romande",
+    description: "Nœud CDN local avec latence < 12ms. Diffusion haute vitesse des matchs du Genève-Servette et Servette FC."
+  },
+  {
+    name: "Lausanne",
+    slug: "lausanne",
+    canton: "Vaud (VD)",
+    population: "140'000 hab.",
+    region: "Suisse Romande",
+    description: "Accès optimisé Vaudois pour les derbies du Lausanne HC et les directs RTS sans coupure."
+  },
+  {
+    name: "Zürich",
+    slug: "zurich",
+    canton: "Zürich (ZH)",
+    population: "420'000 hab.",
+    region: "Deutschschweiz",
+    description: "Serveur primaire suisse allemand pour les rencontres des ZSC Lions et la Super League."
+  },
+  {
+    name: "Basel",
+    slug: "basel",
+    canton: "Basel-Stadt (BS)",
+    population: "178'000 hab.",
+    region: "Deutschschweiz",
+    description: "Infrastructures régionales connectées au SwissIX pour une fluidité 4K à 60 FPS ininterrompue."
+  },
+  {
+    name: "Bern",
+    slug: "bern",
+    canton: "Bern (BE)",
+    population: "134'000 hab.",
+    region: "Capitale Fédérale",
+    description: "Couverture totale de la région bernoise pour les matchs du SC Bern et BSC Young Boys."
+  },
+  {
+    name: "Lugano",
+    slug: "lugano",
+    canton: "Tessin (TI)",
+    population: "63'000 hab.",
+    region: "Svizzera Italiana",
+    description: "Serveur dédié pour le Tessin avec chaînes RSI et matchs passionnés du HC Lugano et HC Ambrì-Piotta."
+  },
+  {
+    name: "Fribourg",
+    slug: "fribourg",
+    canton: "Fribourg (FR)",
+    population: "38'000 hab.",
+    region: "Bilingue FR/DE",
+    description: "Streaming direct pour les fervents supporters du HC Fribourg-Gottéron."
+  },
+  {
+    name: "Neuchâtel",
+    slug: "neuchatel",
+    canton: "Neuchâtel (NE)",
+    population: "44'000 hab.",
+    region: "Suisse Romande",
+    description: "Bande passante non bridée sur tous les réseaux locaux pour un visionnage 4K instantané."
+  },
+  {
+    name: "Sion",
+    slug: "sion",
+    canton: "Valais (VS)",
+    population: "35'000 hab.",
+    region: "Valais",
+    description: "Idéal pour suivre la Coupe du monde de Ski Alpin en direct depuis les stations valaisannes."
+  },
+  {
+    name: "Luzern",
+    slug: "luzern",
+    canton: "Luzern (LU)",
+    population: "82'000 hab.",
+    region: "Zentralschweiz",
+    description: "Flux stabilisés Anti-Freeze 9.8™ pour la Suisse centrale."
+  },
+  {
+    name: "St. Gallen",
+    slug: "st-gallen",
+    canton: "St. Gallen (SG)",
+    population: "76'000 hab.",
+    region: "Ostschweiz",
+    description: "Connectivité optimale pour l'Est de la Suisse et le suivi des compétitions de Super League."
+  },
+  {
+    name: "Biel / Bienne",
+    slug: "biel",
+    canton: "Bern (BE)",
+    population: "55'000 hab.",
+    region: "Seeland Bilingue",
+    description: "Support et interface parfaitement adaptés aux utilisateurs bilingues français et allemand."
+  }
+];
+---
+
+<section id="cities" class="py-20 md:py-32 bg-[#0B0C10] relative overflow-hidden" aria-labelledby="cities-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DC2626]/10 border border-[#DC2626]/30 text-[#DC2626] text-xs font-bold uppercase tracking-wider mb-4">
+        <Sparkles class="w-3.5 h-3.5 text-[#F59E0B]" />
+        <span>Réseau Local Suisse Dédié</span>
+      </div>
+
+      <h2 id="cities-heading" class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4">
+        IPTV Suisse Disponible Dans <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#DC2626] to-[#EF4444]">Tous les Cantons</span>
+      </h2>
+
+      <p class="text-gray-300 text-base sm:text-lg font-normal">
+        Nos serveurs de diffusion sont connectés directement aux points d'échange suisses (SwissIX). Profitez d'une latence minimale et d'un temps de zapping instantané quelle que soit votre ville.
+      </p>
+    </div>
+
+    <!-- Cities Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {cities.map((city) => (
+        <a
+          href={`/locations/${city.slug}`}
+          class="group rounded-2xl bg-[#12141D] border border-white/[0.08] p-6 hover:border-[#DC2626]/50 transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-[0_12px_30px_rgba(220,38,38,0.15)] flex flex-col justify-between"
+          title={`Découvrir IPTV Suisse à ${city.name}`}
+        >
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-[#DC2626]/15 border border-[#DC2626]/30 flex items-center justify-center text-[#DC2626]">
+                  <MapPin class="w-4 h-4" />
+                </div>
+                <h3 class="text-lg font-bold text-white group-hover:text-[#DC2626] transition-colors">
+                  {city.name}
+                </h3>
+              </div>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-white/[0.06] text-gray-300 border border-white/[0.08]">
+                {city.canton}
+              </span>
+            </div>
+
+            <p class="text-xs text-gray-400 leading-relaxed mb-4">
+              {city.description}
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs">
+            <span class="text-gray-400">{city.region}</span>
+            <span class="text-[#DC2626] font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              Accéder à la ville <ArrowRight class="w-3.5 h-3.5" />
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Bottom Reassurance -->
+    <div class="mt-12 text-center text-xs text-gray-400">
+      <p>
+        🇨🇭 Vous habitez une autre commune suisse ? Notre service est 100% compatible sur l'ensemble des 26 cantons suisses avec tous les opérateurs internet (Swisscom, Sunrise, Salt, Wingo, VTX, Net+).
+      </p>
+    </div>
+
+  </div>
+</section>

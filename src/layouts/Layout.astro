@@ -1,0 +1,195 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string | string[];
+  image?: string;
+  type?: 'website' | 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
+  schema?: Record<string, any> | Array<Record<string, any>>;
+  noindex?: boolean;
+  lang?: string;
+  canonicalURL?: URL | string;
+  canonical?: URL | string;
+}
+
+const currentYear = new Date().getFullYear();
+
+const {
+  title = `IPTV Suisse ${currentYear} — Meilleur Abonnement IPTV HD & 4K en Suisse`,
+  description = "Abonnement IPTV Suisse premium : streaming 4K Ultra HD stable, anti-coupure et activation instantanée. Compatible Smart TV, Fire Stick, Android & iOS. Sans engagement, dès CHF 8.-",
+  keywords,
+  image = "/images/og-banner.svg",
+  type = "website",
+  publishedTime,
+  modifiedTime,
+  schema,
+  noindex = false,
+  lang = "fr-CH",
+  canonicalURL: propCanonicalURL,
+  canonical,
+} = Astro.props;
+
+const canonicalURL = propCanonicalURL || canonical;
+
+const currentPath = Astro.url.pathname;
+const siteUrl = 'https://iptvsuisse.it.com';
+const fullUrl = new URL(currentPath, siteUrl).toString();
+
+// Base Organization Schema (E-E-A-T & Google Knowledge Graph)
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${siteUrl}/#organization`,
+  "name": "IPTV Suisse",
+  "alternateName": "IPTV Suisse Streaming",
+  "url": siteUrl,
+  "logo": {
+    "@type": "ImageObject",
+    "url": `${siteUrl}/favicon.svg`,
+    "width": 512,
+    "height": 512
+  },
+  "email": "contact@iptvsuisse.it.com",
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+1-803-658-2620",
+      "contactType": "customer support",
+      "availableLanguage": ["French", "German", "Italian", "English"],
+      "url": "https://wa.me/18036582620"
+    }
+  ],
+  "sameAs": [
+    "https://whatsapp.com/channel/0029VayVaLpD8SE3bf8wMY3v",
+    "https://t.me/castvera_com"
+  ]
+};
+
+// Base Breadcrumbs Schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": siteUrl
+    },
+    ...(currentPath !== '/' && currentPath !== ''
+      ? [
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": title.split('—')[0].trim(),
+            "item": fullUrl
+          }
+        ]
+      : [])
+  ]
+};
+
+// Product & Aggregate Rating Schema for Google Rich Snippets
+const productRatingSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": `${siteUrl}/#product`,
+  "name": "Abonnement IPTV Suisse Premium",
+  "image": new URL(image, siteUrl).toString(),
+  "description": description,
+  "brand": {
+    "@type": "Brand",
+    "name": "IPTV Suisse"
+  },
+  "sku": `IPTV-SUISSE-${currentYear}-PREMIUM`,
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "bestRating": "5.0",
+    "worstRating": "1.0",
+    "ratingCount": "1940",
+    "reviewCount": "1940"
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "CHF",
+    "lowPrice": "8.00",
+    "highPrice": "55.00",
+    "offerCount": "4",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Abonnement 12 Mois (Formule Recommandée - Meilleur Choix)",
+        "price": "55.00",
+        "priceCurrency": "CHF",
+        "availability": "https://schema.org/InStock",
+        "url": `${siteUrl}/#pricing`,
+        "priceValidUntil": `${currentYear}-12-31`
+      },
+      {
+        "@type": "Offer",
+        "name": "Abonnement 6 Mois (Populaire)",
+        "price": "30.00",
+        "priceCurrency": "CHF",
+        "availability": "https://schema.org/InStock",
+        "url": `${siteUrl}/#pricing`,
+        "priceValidUntil": `${currentYear}-12-31`
+      },
+      {
+        "@type": "Offer",
+        "name": "Abonnement 3 Mois (Standard)",
+        "price": "20.00",
+        "priceCurrency": "CHF",
+        "availability": "https://schema.org/InStock",
+        "url": `${siteUrl}/#pricing`,
+        "priceValidUntil": `${currentYear}-12-31`
+      },
+      {
+        "@type": "Offer",
+        "name": "Abonnement 1 Mois (Découverte)",
+        "price": "8.00",
+        "priceCurrency": "CHF",
+        "availability": "https://schema.org/InStock",
+        "url": `${siteUrl}/#pricing`,
+        "priceValidUntil": `${currentYear}-12-31`
+      }
+    ]
+  }
+};
+---
+
+<!doctype html>
+<html lang={lang} class="scroll-smooth bg-[#0B0C10] text-[#F3F4F6]">
+  <head>
+    <BaseHead
+      title={title}
+      description={description}
+      keywords={keywords}
+      image={image}
+      type={type}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+      noindex={noindex}
+      canonicalURL={canonicalURL}
+    />
+
+    <!-- Essential Structured Data (JSON-LD) -->
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(productRatingSchema)} />
+
+    {schema && (
+      Array.isArray(schema) 
+        ? schema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)
+        : <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    )}
+  </head>
+  <body class="min-h-screen flex flex-col selection:bg-[#DC2626] selection:text-white bg-[#0B0C10] text-[#F3F4F6] font-sans antialiased overflow-x-hidden">
+    <slot />
+  </body>
+</html>

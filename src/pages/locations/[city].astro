@@ -1,0 +1,339 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import StickyHeader from '../../components/StickyHeader.astro';
+import FeatureGrid from '../../components/FeatureGrid.astro';
+import PricingCard from '../../components/PricingCard.astro';
+import ReferralBanner from '../../components/ReferralBanner.astro';
+import UserReviewsSection from '../../components/UserReviewsSection.astro';
+import ProcessSteps from '../../components/ProcessSteps.astro';
+import SupportedDevices from '../../components/SupportedDevices.astro';
+import CitiesList from '../../components/CitiesList.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import CTASection from '../../components/CTASection.astro';
+import Footer from '../../components/Footer.astro';
+import FloatingWhatsApp from '../../components/FloatingWhatsApp.astro';
+import SocialPopup from '../../components/SocialPopup.astro';
+import ExitPopup from '../../components/ExitPopup.astro';
+import GroupsPopup from '../../components/GroupsPopup.astro';
+import { MapPin, Wifi, Trophy, ShieldCheck, ArrowRight, MessageCircle } from 'lucide-astro';
+
+export async function getStaticPaths() {
+  const cities = [
+    {
+      slug: 'geneve',
+      name: 'Genève',
+      canton: 'Genève (GE)',
+      region: 'Bassin Lémanique',
+      localIsp: 'SIG Fibre & Swisscom 10 Gbit/s',
+      teams: 'Genève-Servette HC & Servette FC',
+      leadText: "Profitez du meilleur service IPTV à Genève. Que vous soyez aux Eaux-Vives, à Plainpalais, Servette ou Carouge, connectez votre Smart TV au réseau fibre genevois avec zéro coupure."
+    },
+    {
+      slug: 'lausanne',
+      name: 'Lausanne',
+      canton: 'Vaud (VD)',
+      region: 'Capitale Olympique & Lavaux',
+      localIsp: 'Citycable & Swisscom Fibre',
+      teams: 'Lausanne Hockey Club (LHC) & FC Lausanne-Sport',
+      leadText: "À Lausanne, Ouchy, Sallaz ou dans l'agglomération vaudoise, bénéficiez de vos chaînes suisses et internationales en 4K UHD Ultra Low Latency pour vibrer avec le LHC."
+    },
+    {
+      slug: 'zurich',
+      name: 'Zürich',
+      canton: 'Zürich (ZH)',
+      region: 'Agglomération Zurichoise',
+      localIsp: 'ewz.zürinet & Swisscom Gbit',
+      teams: 'ZSC Lions & Grasshopper / FC Zürich',
+      leadText: "Das beste IPTV-Streaming in Zürich. Geniessen Sie Schweizer und internationale TV-Sender in gestochen scharfem 4K mit stabiler Schweizer Server-Infrastruktur."
+    },
+    {
+      slug: 'bale',
+      name: 'Bâle',
+      canton: 'Bâle-Ville (BS)',
+      region: 'Région des Trois Frontières',
+      localIsp: 'IWB Telecom & Swisscom',
+      teams: 'EHC Basel & FC Basel 1893',
+      leadText: "Excellence du streaming IPTV à Bâle. Vos programmes TV suisses, allemands et français en très haute définition sans mémoire tampon sur le réseau IWB."
+    },
+    {
+      slug: 'berne',
+      name: 'Berne',
+      canton: 'Berne (BE)',
+      region: 'Capitale Fédérale',
+      localIsp: 'Energie Wasser Bern (ewb)',
+      teams: 'SC Bern & BSC Young Boys',
+      leadText: "À Berne et dans l'Oberland bernois, suivez les matchs du SCB et des Young Boys en 4K 60FPS native avec notre routage ultra-rapide Anti-Freeze 9.8™."
+    },
+    {
+      slug: 'lugano',
+      name: 'Lugano',
+      canton: 'Tessin (TI)',
+      region: 'Suisse Italienne (Sottoceneri)',
+      localIsp: 'AIL Lugano & Swisscom Fibre',
+      teams: 'HC Lugano & FC Lugano',
+      leadText: "Il miglior IPTV a Lugano e nel Canton Ticino. Canali svizzeri RSI LA1 e LA2 in 4K nativo con commento italiano e zero interruzioni."
+    },
+    {
+      slug: 'lucerne',
+      name: 'Lucerne',
+      canton: 'Lucerne (LU)',
+      region: 'Suisse Centrale',
+      localIsp: 'ewl energie wasser luzern',
+      teams: 'FC Luzern',
+      leadText: "Vivez une expérience TV d'exception à Lucerne et au bord du lac des Quatre-Cantons avec nos flux optimisés pour les connexions haut débit locales."
+    },
+    {
+      slug: 'neuchatel',
+      name: 'Neuchâtel',
+      canton: 'Neuchâtel (NE)',
+      region: 'Pays de Neuchâtel',
+      localIsp: 'Viteos & Swisscom Fibre',
+      teams: 'Neuchâtel Xamax FCS',
+      leadText: "À Neuchâtel, Serrières et le long du littoral, accédez instantanément à vos chaînes RTS 1, RTS 2 et au sport en direct sans décodeur encombrant."
+    },
+    {
+      slug: 'fribourg',
+      name: 'Fribourg',
+      canton: 'Fribourg (FR)',
+      region: 'Grand Fribourg & Sarine',
+      localIsp: 'Groupe E & Swisscom',
+      teams: 'Fribourg-Gottéron',
+      leadText: "Supporters des Dragons de Fribourg-Gottéron à la BCF Arena ou à domicile, profitez de la National League en 60 FPS sans le moindre décalage."
+    },
+    {
+      slug: 'sion',
+      name: 'Sion',
+      canton: 'Valais (VS)',
+      region: 'Plaine du Rhône Valaisanne',
+      localIsp: 'OIKEN & Valais Fibre',
+      teams: 'FC Sion & HC Sierre',
+      leadText: "En Valais, de Sion à Martigny et dans les stations alpines, profitez de la Coupe du Monde de Ski et de vos films préférés en 4K fluide même en altitude."
+    },
+    {
+      slug: 'saint-gall',
+      name: 'Saint-Gall',
+      canton: 'Saint-Gall (SG)',
+      region: 'Suisse Orientale',
+      localIsp: 'Sankt Galler Stadtwerke (sgsw)',
+      teams: 'FC St. Gallen 1879',
+      leadText: "Qualité de diffusion suisse supérieure à Saint-Gall. Connexion rapide pour toutes vos Smart TV Samsung, LG et boîtiers Android."
+    },
+    {
+      slug: 'bienne',
+      name: 'Bienne',
+      canton: 'Berne (BE)',
+      region: 'Seeland Bilingue',
+      localIsp: 'ESB Energie Service Biel/Bienne',
+      teams: 'EHC Biel-Bienne',
+      leadText: "Dans la métropole bilingue de Bienne, recevez aussi bien les chaînes francophones que germanophones dans une clarté 4K exceptionnelle."
+    },
+    {
+      slug: 'la-chaux-de-fonds',
+      name: 'La Chaux-de-Fonds',
+      canton: 'Neuchâtel (NE)',
+      region: 'Montagnes Neuchâteloises',
+      localIsp: 'Viteos Montagnes',
+      teams: 'HC La Chaux-de-Fonds (HCC)',
+      leadText: "À 1000 mètres d'altitude à La Chaux-de-Fonds et au Locle, profitez d'une stabilité totale pour le hockey sur glace et vos séries favorites."
+    },
+    {
+      slug: 'yverdon-les-bains',
+      name: 'Yverdon-les-Bains',
+      canton: 'Vaud (VD)',
+      region: 'Nord Vaudois',
+      localIsp: 'Yverdon Énergies & Swisscom',
+      teams: 'Yverdon Sport FC',
+      leadText: "Dans le Nord vaudois, activez votre abonnement IPTV Suisse en 2 minutes chrono et dites adieu aux factures excessives des câblo-opérateurs."
+    },
+    {
+      slug: 'montreux',
+      name: 'Montreux',
+      canton: 'Vaud (VD)',
+      region: 'Riviera Vaudoise',
+      localIsp: 'SEIC Riviera & Swisscom',
+      teams: 'Montreux HC',
+      leadText: "Sur la Riviera vaudoise à Montreux et Vevey, découvrez l'élégance d'une télévision sans coupure avec un catalogue VOD 4K sans égal."
+    },
+    {
+      slug: 'nyon',
+      name: 'Nyon',
+      canton: 'Vaud (VD)',
+      region: 'La Côte',
+      localIsp: 'Services Industriels de Nyon (SIN)',
+      teams: 'Stade Nyonnais',
+      leadText: "Entre Genève et Lausanne, les résidents de Nyon et du district profitent de la vitesse maximale pour visionner la Champions League et les chaînes suisses."
+    }
+  ];
+
+  return cities.map(city => ({
+    params: { city: city.slug },
+    props: { city }
+  }));
+}
+
+const { city } = Astro.props;
+
+const pageTitle = `IPTV ${city.name} 2026 — Meilleur Abonnement IPTV 4K à ${city.name} (${city.canton})`;
+const pageDescription = `Abonnement IPTV à ${city.name} en 4K Ultra HD. Compatible fibre ${city.localIsp}. Chaînes suisses et sport en direct dès CHF 8.-`;
+const pageKeywords = [
+  `iptv ${city.name.toLowerCase()}`,
+  `abonnement iptv ${city.name.toLowerCase()}`,
+  `meilleur iptv ${city.name.toLowerCase()}`,
+  `iptv ${city.canton.toLowerCase()}`,
+  `iptv suisse 4k`,
+  `iptv suisse`
+];
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": `IPTV Suisse — Service Local ${city.name}`,
+  "serviceType": "Télévision IPTV 4K par Internet",
+  "provider": {
+    "@type": "Organization",
+    "name": "IPTV Suisse",
+    "url": "https://iptvsuisse.it.com"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": city.name,
+    "containedInPlace": {
+      "@type": "AdministrativeArea",
+      "name": city.canton
+    }
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "CHF",
+    "lowPrice": "8",
+    "highPrice": "55",
+    "offerCount": "4"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "1940",
+    "bestRating": "5"
+  }
+};
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  canonical={`/locations/${city.slug}`}
+  schema={localSchema}
+>
+  <StickyHeader />
+
+  <main class="min-h-screen pt-28 bg-[#0B0C10] text-gray-200">
+    <!-- 1. Local Hero with H1 and Geotargeted Copy -->
+    <section class="py-16 md:py-24 relative overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none -z-10" aria-hidden="true">
+        <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#DC2626]/12 rounded-full blur-[140px]"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <!-- Canton Tag -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DC2626]/10 border border-[#DC2626]/30 text-[#DC2626] text-xs font-black uppercase tracking-wider mb-6">
+          <MapPin class="w-4 h-4 text-[#DC2626]" />
+          <span>Zone Desservie : {city.name} — {city.canton} 🇨🇭</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight mb-6 max-w-4xl mx-auto">
+          Abonnement IPTV 4K à <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#DC2626] to-[#EF4444]">{city.name}</span> : Streaming Suisse Stable &amp; Haute Définition
+        </h1>
+
+        <p class="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto font-normal leading-relaxed mb-8">
+          {city.leadText}
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+          <a
+            href="#pricing"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-[#DC2626] to-[#EF4444] text-white font-black text-base shadow-xl shadow-red-900/30 hover:scale-[1.02] transition-transform"
+          >
+            <span>Activer à {city.name} (dès CHF 8.-)</span>
+            <ArrowRight class="w-5 h-5" />
+          </a>
+
+          <a
+            href={`https://wa.me/18036582620?text=Bonjour,%20je%20souhaite%20un%20test%20IPTV%20pour%20${encodeURIComponent(city.name)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.12] text-white font-bold text-base transition-colors"
+          >
+            <MessageCircle class="w-5 h-5 text-emerald-400" />
+            <span>Essai 24h Gratuit WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Local Network & ISP Features -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto text-left">
+          <div class="p-5 rounded-2xl bg-[#12141D] border border-white/[0.06]">
+            <div class="flex items-center gap-2 text-[#60A5FA] font-bold text-sm mb-1">
+              <Wifi class="w-4 h-4" />
+              <span>Réseau Local Dédié</span>
+            </div>
+            <p class="text-xs text-gray-300">Optimisé pour la fibre {city.localIsp}.</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-[#12141D] border border-white/[0.06]">
+            <div class="flex items-center gap-2 text-amber-400 font-bold text-sm mb-1">
+              <Trophy class="w-4 h-4" />
+              <span>Clubs &amp; Équipes</span>
+            </div>
+            <p class="text-xs text-gray-300">Vivez chaque match de {city.teams} en direct 60 FPS.</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-[#12141D] border border-white/[0.06]">
+            <div class="flex items-center gap-2 text-emerald-400 font-bold text-sm mb-1">
+              <ShieldCheck class="w-4 h-4" />
+              <span>Confidentialité nLPD</span>
+            </div>
+            <p class="text-xs text-gray-300">Streaming privé protégé conforme au droit suisse (LDA Art. 19).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Features Grid (Anti-Freeze 9.8™, Swiss ISP bypass) -->
+    <FeatureGrid />
+
+    <!-- 3. Pricing Card (12-Month CHF 55.- first, NO TWINT) -->
+    <PricingCard />
+
+    <!-- 4. Referrer (1 Mois Offert) -->
+    <ReferralBanner />
+
+    <!-- 5. Testimonials & Verified Reviews -->
+    <UserReviewsSection />
+
+    <!-- 6. Setup in 3 steps -->
+    <ProcessSteps />
+
+    <!-- 7. Compatible Devices -->
+    <SupportedDevices />
+
+    <!-- 8. Other Swiss Cities Grid for Internal Linking -->
+    <CitiesList />
+
+    <!-- 9. Contact Form -->
+    <ContactForm />
+
+    <!-- 10. FAQ -->
+    <FAQSection />
+
+    <!-- 11. Final CTA -->
+    <CTASection />
+  </main>
+
+  <Footer />
+  <FloatingWhatsApp />
+  <SocialPopup />
+  <ExitPopup />
+  <GroupsPopup />
+</Layout>

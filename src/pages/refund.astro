@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/Layout.astro';
+import StickyHeader from '../components/StickyHeader.astro';
+import Footer from '../components/Footer.astro';
+import { RefreshCw, Clock, CheckCircle2, AlertTriangle, MessageCircle, Mail } from 'lucide-astro';
+
+const pageTitle = "Politique de Remboursement 24h Garanti - IPTV Suisse";
+const pageDescription = "Consultez notre politique de remboursement garantie 24 heures. Testez votre abonnement IPTV Suisse en toute sérénité.";
+---
+
+<Layout title={pageTitle} description={pageDescription} canonical="/refund">
+  <StickyHeader />
+
+  <main class="min-h-screen pt-32 pb-24 bg-[#0B0C10] text-gray-300">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="border-b border-white/[0.08] pb-10 mb-12">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
+          <Clock class="w-4 h-4" />
+          <span>Garantie Intégrale 24 Heures</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4">
+          Politique de Remboursement
+        </h1>
+        <p class="text-sm sm:text-base text-gray-400">
+          Nous sommes convaincus de la stabilité absolue de nos serveurs en Suisse (Anti-Freeze 9.8™). C'est pourquoi nous vous offrons une période d'essai et d'évaluation garantie durant les 24 premières heures suivant votre commande.
+        </p>
+      </div>
+
+      <!-- Main Guarantee Box -->
+      <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#161926] to-[#11131C] border border-[#DC2626]/30 mb-10 shadow-2xl relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-[#DC2626]/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-[#DC2626]/20 border border-[#DC2626]/40 flex items-center justify-center text-[#DC2626] shrink-0">
+            <RefreshCw class="w-6 h-6" />
+          </div>
+          <div>
+            <h2 class="text-xl sm:text-2xl font-black text-white mb-2">
+              Satisfait ou Remboursé à 100% dans les 24h
+            </h2>
+            <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+              Si pour une quelconque raison technique notre flux ne répond pas à vos exigences sur votre équipement (Smart TV, Fire TV, Apple TV, etc.), vous pouvez demander l'annulation et le remboursement intégral de votre paiement dans un délai strict de <strong>24 heures</strong> suivant la réception de vos identifiants d'accès.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detail Points -->
+      <div class="space-y-8 text-sm sm:text-base leading-relaxed">
+        <!-- Step by Step -->
+        <section class="rounded-3xl bg-[#12141D] border border-white/[0.08] p-6 sm:p-8">
+          <h3 class="text-lg sm:text-xl font-bold text-white mb-4">
+            Comment demander votre remboursement en 2 minutes ?
+          </h3>
+          <ol class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-[#DC2626] text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">1</span>
+              <div>
+                <strong class="text-white">Contactez notre support avant l'expiration des 24h :</strong>
+                <p class="text-gray-400 text-xs sm:text-sm mt-0.5">Envoyez votre référence de commande ou l'adresse e-mail utilisée lors du paiement par WhatsApp ou par e-mail.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-[#DC2626] text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">2</span>
+              <div>
+                <strong class="text-white">Vérification technique rapide :</strong>
+                <p class="text-gray-400 text-xs sm:text-sm mt-0.5">Si vous le souhaitez, nos ingénieurs peuvent vous proposer un réglage DNS ou un lecteur alternatif pour résoudre un éventuel souci de codec.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-[#DC2626] text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">3</span>
+              <div>
+                <strong class="text-white">Remboursement immédiat :</strong>
+                <p class="text-gray-400 text-xs sm:text-sm mt-0.5">Si vous confirmez votre souhait de résilier, nous annulons vos accès et émettons le remboursement sans poser de questions superflues sous 24 à 48 heures ouvrées.</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <!-- Conditions & Exclusions -->
+        <section class="rounded-3xl bg-[#12141D] border border-white/[0.08] p-6 sm:p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <AlertTriangle class="w-6 h-6 text-amber-400" />
+            <h3 class="text-lg sm:text-xl font-bold text-white">Conditions d'Application & Exclusions</h3>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2.5">
+              <CheckCircle2 class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+              <span><strong class="text-white">Délai limite impératif :</strong> Toute demande formulée au-delà de 24 heures après la livraison de vos accès ne sera pas éligible au remboursement en raison des coûts de bande passante alloués aux serveurs suisses.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <CheckCircle2 class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+              <span><strong class="text-white">Rétrofacturations abusives :</strong> En cas de litige bancaire ouvert sans avoir préalablement contacté notre support pendant la période de 24h, le compte et l'adresse IP seront définitivement blacklistés sur le réseau de distribution suisse.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <CheckCircle2 class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+              <span><strong class="text-white">Moyen de remboursement :</strong> Les fonds sont recrédités directement sur le moyen de paiement d'origine (Carte Bancaire, PostFinance, Apple Pay, PayPal, Crypto).</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Fast Contact Channels -->
+        <section class="rounded-3xl bg-[#161926] border border-white/[0.08] p-6 sm:p-8">
+          <h3 class="text-lg sm:text-xl font-bold text-white mb-3">Besoin d'aide ou d'un remboursement ?</h3>
+          <p class="text-xs sm:text-sm text-gray-400 mb-6">
+            Nos opérateurs basés en Suisse et en Europe vous répondent en moins de 15 minutes.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a
+              href="https://wa.me/18036582620?text=Bonjour,%20je%20souhaite%20une%20assistance%20/%20remboursement%2024h%20sur%20ma%20commande"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-3 p-4 rounded-2xl bg-emerald-600/20 border border-emerald-500/40 hover:bg-emerald-600/30 text-white transition-colors"
+            >
+              <MessageCircle class="w-6 h-6 text-emerald-400" />
+              <div>
+                <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Support WhatsApp Direct</p>
+                <p class="text-sm font-bold text-emerald-400">+1 (803) 658-2620</p>
+              </div>
+            </a>
+            <a
+              href="mailto:contact@iptvsuisse.it.com?subject=Demande%20de%20Remboursement%2024h"
+              class="flex items-center gap-3 p-4 rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:bg-white/[0.06] text-white transition-colors"
+            >
+              <Mail class="w-6 h-6 text-gray-300" />
+              <div>
+                <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Service Réclamations</p>
+                <p class="text-sm font-bold text-white">contact@iptvsuisse.it.com</p>
+              </div>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

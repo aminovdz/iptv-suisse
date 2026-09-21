@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import StickyHeader from '../components/StickyHeader.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+
+const pageTitle = "Contact & Support Client 7j/7 - IPTV Suisse";
+const pageDescription = "Contactez l'assistance IPTV Suisse par WhatsApp (+1 803 658 2620), Telegram ou e-mail. Support réactif en moins de 15 minutes en Suisse.";
+---
+
+<Layout title={pageTitle} description={pageDescription} canonical="/contact">
+  <StickyHeader />
+
+  <main class="min-h-screen pt-24 bg-[#0B0C10]">
+    <ContactForm />
+  </main>
+
+  <Footer />
+  <FloatingWhatsApp />
+</Layout>
