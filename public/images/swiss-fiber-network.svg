@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none" class="w-full h-auto">
+  <defs>
+    <linearGradient id="bg-fiber" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#090B10" />
+      <stop offset="1" stop-color="#121622" />
+    </linearGradient>
+    <linearGradient id="fiber-line" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#DC2626" />
+      <stop offset="0.5" stop-color="#3B82F6" />
+      <stop offset="1" stop-color="#10B981" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" rx="20" fill="url(#bg-fiber)" stroke="#ffffff" stroke-opacity="0.08" stroke-width="2" />
+
+  <!-- Mountain Silhouettes -->
+  <path d="M0 380 L180 260 L320 330 L500 210 L680 340 L800 270 L800 450 L0 450 Z" fill="#141824" fill-opacity="0.8" />
+  <path d="M120 400 L280 290 L420 350 L600 250 L750 370 L800 330 L800 450 L120 450 Z" fill="#1A2030" fill-opacity="0.6" />
+
+  <!-- Fiber Optic Glowing Lines Connecting Swiss Hubs -->
+  <!-- Geneva to Lausanne -->
+  <path d="M 160 360 Q 240 310, 310 320" stroke="#3B82F6" stroke-width="3" stroke-linecap="round" filter="drop-shadow(0 0 8px #3B82F6)" />
+  <!-- Lausanne to Bern -->
+  <path d="M 310 320 Q 380 280, 440 260" stroke="#DC2626" stroke-width="3" stroke-linecap="round" filter="drop-shadow(0 0 8px #DC2626)" />
+  <!-- Bern to Zurich -->
+  <path d="M 440 260 Q 530 220, 600 210" stroke="#10B981" stroke-width="3" stroke-linecap="round" filter="drop-shadow(0 0 8px #10B981)" />
+  <!-- Zurich to Basel -->
+  <path d="M 600 210 Q 540 180, 480 170" stroke="#F59E0B" stroke-width="3" stroke-linecap="round" filter="drop-shadow(0 0 8px #F59E0B)" />
+  <!-- Zurich to Lugano -->
+  <path d="M 600 210 Q 640 300, 620 380" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round" filter="drop-shadow(0 0 8px #8B5CF6)" />
+
+  <!-- Swiss Node Points -->
+  <!-- Geneva -->
+  <circle cx="160" cy="360" r="8" fill="#3B82F6" />
+  <circle cx="160" cy="360" r="16" stroke="#3B82F6" stroke-opacity="0.4" stroke-width="2" />
+  <text x="160" y="395" text-anchor="middle" fill="#93C5FD" font-size="12" font-weight="bold" font-family="sans-serif">GENÈVE</text>
+
+  <!-- Lausanne -->
+  <circle cx="310" cy="320" r="8" fill="#DC2626" />
+  <circle cx="310" cy="320" r="16" stroke="#DC2626" stroke-opacity="0.4" stroke-width="2" />
+  <text x="310" y="355" text-anchor="middle" fill="#FCA5A5" font-size="12" font-weight="bold" font-family="sans-serif">LAUSANNE</text>
+
+  <!-- Bern -->
+  <circle cx="440" cy="260" r="8" fill="#F59E0B" />
+  <circle cx="440" cy="260" r="16" stroke="#F59E0B" stroke-opacity="0.4" stroke-width="2" />
+  <text x="440" y="295" text-anchor="middle" fill="#FDE68A" font-size="12" font-weight="bold" font-family="sans-serif">BERNE</text>
+
+  <!-- Zurich -->
+  <circle cx="600" cy="210" r="10" fill="#10B981" />
+  <circle cx="600" cy="210" r="20" stroke="#10B981" stroke-opacity="0.4" stroke-width="2" />
+  <text x="600" y="180" text-anchor="middle" fill="#6EE7B7" font-size="13" font-weight="900" font-family="sans-serif">ZÜRICH</text>
+
+  <!-- Basel -->
+  <circle cx="480" cy="170" r="8" fill="#F59E0B" />
+  <text x="480" y="150" text-anchor="middle" fill="#FDE68A" font-size="12" font-weight="bold" font-family="sans-serif">BÂLE</text>
+
+  <!-- Lugano -->
+  <circle cx="620" cy="380" r="8" fill="#8B5CF6" />
+  <text x="620" y="415" text-anchor="middle" fill="#C4B5FD" font-size="12" font-weight="bold" font-family="sans-serif">LUGANO</text>
+
+  <!-- Central Speed Badge -->
+  <g transform="translate(260, 60)">
+    <rect width="280" height="42" rx="21" fill="#181D2A" stroke="#ffffff" stroke-opacity="0.15" />
+    <circle cx="26" cy="21" r="6" fill="#10B981" />
+    <text x="45" y="26" fill="#ffffff" font-size="13" font-weight="bold" font-family="sans-serif">INFRASTRUCTURE FIBRE 10 Gbps 🇨🇭</text>
+  </g>
+</svg>

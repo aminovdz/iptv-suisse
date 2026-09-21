@@ -72,7 +72,7 @@ export async function getStaticPaths() {
       region: 'Suisse Italienne (Sottoceneri)',
       localIsp: 'AIL Lugano & Swisscom Fibre',
       teams: 'HC Lugano & FC Lugano',
-      leadText: "Il miglior IPTV a Lugano e nel Canton Ticino. Canali svizzeri RSI LA1 e LA2 in 4K nativo con commento italiano e zero interruzioni."
+      leadText: "Il miglior IPTV a Lugano e nel Canton Ticino. Canali svizzeri in italiano in 4K nativo con commento italiano e zero interruzioni."
     },
     {
       slug: 'lucerne',
@@ -90,7 +90,7 @@ export async function getStaticPaths() {
       region: 'Pays de Neuchâtel',
       localIsp: 'Viteos & Swisscom Fibre',
       teams: 'Neuchâtel Xamax FCS',
-      leadText: "À Neuchâtel, Serrières et le long du littoral, accédez instantanément à vos chaînes RTS 1, RTS 2 et au sport en direct sans décodeur encombrant."
+      leadText: "À Neuchâtel, Serrières et le long du littoral, accédez instantanément à toutes les chaînes suisses romandes et au sport en direct sans décodeur encombrant."
     },
     {
       slug: 'fribourg',
@@ -175,7 +175,7 @@ export async function getStaticPaths() {
 const { city } = Astro.props;
 
 const pageTitle = `IPTV ${city.name} 2026 — Meilleur Abonnement IPTV 4K à ${city.name} (${city.canton})`;
-const pageDescription = `Abonnement IPTV à ${city.name} en 4K Ultra HD. Compatible fibre ${city.localIsp}. Chaînes suisses et sport en direct dès CHF 8.-`;
+const pageDescription = `Abonnement IPTV à ${city.name} en 4K Ultra HD. Compatible fibre ${city.localIsp}. Chaînes suisses et sport en direct dès CHF 8`;
 const pageKeywords = [
   `iptv ${city.name.toLowerCase()}`,
   `abonnement iptv ${city.name.toLowerCase()}`,
@@ -251,12 +251,12 @@ const localSchema = {
         </p>
 
         <!-- CTA Action Buttons -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
           <a
             href="#pricing"
             class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-[#DC2626] to-[#EF4444] text-white font-black text-base shadow-xl shadow-red-900/30 hover:scale-[1.02] transition-transform"
           >
-            <span>Activer à {city.name} (dès CHF 8.-)</span>
+            <span>Activer à {city.name} (dès CHF 8)</span>
             <ArrowRight class="w-5 h-5" />
           </a>
 
@@ -269,6 +269,18 @@ const localSchema = {
             <MessageCircle class="w-5 h-5 text-emerald-400" />
             <span>Essai 24h Gratuit WhatsApp</span>
           </a>
+        </div>
+
+        <!-- Fiber Network Illustration with Alt Text -->
+        <div class="max-w-3xl mx-auto mb-12">
+          <img
+            src="/images/swiss-fiber-network.svg"
+            alt={`Infrastructure réseau fibre optique haute vitesse compatible IPTV Suisse à ${city.name}`}
+            class="w-full h-auto rounded-2xl border border-white/10 shadow-2xl"
+            width="800"
+            height="450"
+            loading="lazy"
+          />
         </div>
 
         <!-- Local Network & ISP Features -->
@@ -303,7 +315,7 @@ const localSchema = {
     <!-- 2. Features Grid (Anti-Freeze 9.8™, Swiss ISP bypass) -->
     <FeatureGrid />
 
-    <!-- 3. Pricing Card (12-Month CHF 55.- first, NO TWINT) -->
+    <!-- 3. Pricing Card (12-Month CHF 55 first, NO TWINT) -->
     <PricingCard />
 
     <!-- 4. Referrer (1 Mois Offert) -->

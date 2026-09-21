@@ -5,18 +5,22 @@ import Footer from '../components/Footer.astro';
 import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
 import { Gift, Share2, Sparkles, CheckCircle2, Trophy, ArrowRight, MessageCircle, Copy } from 'lucide-astro';
 
-const pageTitle = "Programme de Parrainage Suisse | 1 Mois Offert - IPTV Suisse";
-const pageDescription = "Parrainez vos proches en Suisse et gagnez 1 mois d'abonnement IPTV gratuit pour chaque filleul activé. Illimité et cumulable.";
-const defaultShareUrl = "https://api.whatsapp.com/send?text=D%C3%A9couvre%20IPTV%20Suisse%20pour%20regarder%20toutes%20les%20cha%C3%AEnes%20suisses%20et%20le%20sport%20en%204K%20d%C3%A8s%20CHF%208.-%20%3A%20https%3A%2F%2Fiptvsuisse.it.com";
+const pageTitle = "Programme Parrainage IPTV Suisse — 1 Mois Offert Pour Vous & Votre Filleul";
+const pageDescription = "Recommandez IPTV Suisse à vos amis et gagnez chacun 1 mois d'abonnement gratuit. Compatible Smart TV, 4K Ultra HD sans coupure.";
+const defaultShareUrl = "https://api.whatsapp.com/send?text=D%C3%A9couvre%20IPTV%20Suisse%20pour%20regarder%20toutes%20les%20cha%C3%AEnes%20suisses%20et%20le%20sport%20en%204K%20d%C3%A8s%20CHF%208%20%3A%20https%3A%2F%2Fiptvsuisse.it.com";
 ---
 
-<Layout title={pageTitle} description={pageDescription} canonical="/referral">
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonical="/referral"
+>
   <StickyHeader />
 
   <main class="min-h-screen pt-32 pb-24 bg-[#0B0C10] text-gray-300">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Hero -->
-      <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="text-center max-w-3xl mx-auto mb-12">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-wider mb-4">
           <Sparkles class="w-4 h-4 text-amber-400" />
           <span>Avantage Communauté Helvétique</span>
@@ -27,6 +31,18 @@ const defaultShareUrl = "https://api.whatsapp.com/send?text=D%C3%A9couvre%20IPTV
         <p class="text-base sm:text-lg text-gray-300">
           Vous adorez votre expérience IPTV Suisse ? Partagez-la avec vos amis et collègues à Genève, Lausanne, Zürich ou Neuchâtel. Chaque recommandation récompensée !
         </p>
+      </div>
+
+      <!-- Referral Illustration with Alt Text -->
+      <div class="max-w-2xl mx-auto mb-12">
+        <img
+          src="/images/referral-rewards.svg"
+          alt="Programme de parrainage IPTV Suisse : un mois gratuit offert pour le parrain et un mois gratuit offert pour le filleul"
+          class="w-full h-auto rounded-3xl border border-white/10 shadow-2xl"
+          width="800"
+          height="500"
+          loading="lazy"
+        />
       </div>
 
       <!-- Highlight Banner -->
@@ -165,7 +181,7 @@ const defaultShareUrl = "https://api.whatsapp.com/send?text=D%C3%A9couvre%20IPTV
 <script>
   const copyBtn = document.getElementById('copy-referral-btn');
   const btnLabel = document.getElementById('copy-btn-label');
-  const textToShare = "Découvre IPTV Suisse pour regarder toutes les chaînes suisses et le sport en 4K dès CHF 8.- : https://iptvsuisse.it.com";
+  const textToShare = "Découvre IPTV Suisse pour regarder toutes les chaînes suisses et le sport en 4K dès CHF 8 : https://iptvsuisse.it.com";
 
   if (copyBtn && btnLabel) {
     copyBtn.addEventListener('click', async () => {

@@ -24,20 +24,20 @@ export async function getStaticPaths() {
       brand: 'iptv-suisse',
       competitor: 'swisscom-blue-tv',
       competitorName: 'Swisscom blue TV',
-      competitorPriceMonth: 'CHF 119.-',
-      competitorPriceYear: "CHF 1'428.-",
-      competitorBoxFee: 'CHF 5.-/mois (TV Box inclus/suppl.)',
+      competitorPriceMonth: 'CHF 119',
+      competitorPriceYear: "CHF 1'428",
+      competitorBoxFee: 'CHF 5/mois (TV Box inclus/suppl.)',
       competitorCommitment: '24 Mois obligatoire',
       competitorSkipAds: 'CHF 7.90/mois pour zapper les pubs',
-      summary: "Swisscom blue TV propose une offre solide mais particulièrement coûteuse avec des frais cachés (option pour passer les pubs du Replay, engagement de 24 mois). IPTV Suisse vous fait économiser plus de CHF 1'350.- chaque année."
+      summary: "Swisscom blue TV propose une offre solide mais particulièrement coûteuse avec des frais cachés (option pour passer les pubs du Replay, engagement de 24 mois). IPTV Suisse vous fait économiser plus de CHF 1'350 chaque année."
     },
     {
       brand: 'iptv-suisse',
       competitor: 'sunrise-tv',
       competitorName: 'Sunrise TV',
-      competitorPriceMonth: 'CHF 99.-',
-      competitorPriceYear: "CHF 1'188.-",
-      competitorBoxFee: 'CHF 10.-/mois par décodeur additionnel',
+      competitorPriceMonth: 'CHF 99',
+      competitorPriceYear: "CHF 1'188",
+      competitorBoxFee: 'CHF 10/mois par décodeur additionnel',
       competitorCommitment: '12 à 24 Mois',
       competitorSkipAds: 'CHF 7.90/mois (Option Skip Ads)',
       summary: "L'offre Sunrise TV implique un abonnement fixe contraignant et des suppléments pour chaque téléviseur supplémentaire. IPTV Suisse fonctionne sans boîtier propriétaire directement sur votre Smart TV."
@@ -121,12 +121,12 @@ const comparisonSchema = {
         </p>
 
         <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
           <a
             href="#pricing"
             class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-[#DC2626] to-[#EF4444] text-white font-black text-base shadow-xl shadow-red-900/30 hover:scale-[1.02] transition-transform"
           >
-            <span>Choisir IPTV Suisse (CHF 55.-/an)</span>
+            <span>Choisir IPTV Suisse (CHF 55/an)</span>
             <ArrowRight class="w-5 h-5" />
           </a>
 
@@ -139,6 +139,18 @@ const comparisonSchema = {
             <MessageCircle class="w-5 h-5 text-emerald-400" />
             <span>Tester 24h Gratuitement</span>
           </a>
+        </div>
+
+        <!-- Comparison Visual Graphic with Alt Text -->
+        <div class="max-w-2xl mx-auto mb-12">
+          <img
+            src="/images/comparison-savings.svg"
+            alt={`Comparatif économique et technique entre IPTV Suisse et ${comparison.competitorName}`}
+            class="w-full h-auto rounded-2xl border border-white/10 shadow-2xl"
+            width="800"
+            height="450"
+            loading="lazy"
+          />
         </div>
 
         <!-- Head-to-Head Comparison Card -->
@@ -155,12 +167,12 @@ const comparisonSchema = {
               <tr>
                 <td class="py-4 px-4 text-white font-medium">Tarif Mensuel Équivalent</td>
                 <td class="py-4 px-4 text-red-300 font-semibold">{comparison.competitorPriceMonth} /mois</td>
-                <td class="py-4 px-4 text-emerald-400 font-black text-base bg-emerald-950/20">CHF 4.58 /mois (CHF 55.- /an)</td>
+                <td class="py-4 px-4 text-emerald-400 font-black text-base bg-emerald-950/20">CHF 4.58 /mois (CHF 55 /an)</td>
               </tr>
               <tr>
                 <td class="py-4 px-4 text-white font-medium">Coût Annuel Total</td>
                 <td class="py-4 px-4 text-gray-300">{comparison.competitorPriceYear}</td>
-                <td class="py-4 px-4 text-amber-400 font-extrabold bg-emerald-950/20">CHF 55.- tout inclus</td>
+                <td class="py-4 px-4 text-amber-400 font-extrabold bg-emerald-950/20">CHF 55 tout inclus</td>
               </tr>
               <tr>
                 <td class="py-4 px-4 text-white font-medium">Durée d'Engagement</td>
@@ -170,7 +182,7 @@ const comparisonSchema = {
               <tr>
                 <td class="py-4 px-4 text-white font-medium">Frais de Box TV Matérielle</td>
                 <td class="py-4 px-4 text-gray-400">{comparison.competitorBoxFee}</td>
-                <td class="py-4 px-4 text-emerald-400 font-bold bg-emerald-950/20">CHF 0.- (App sur Smart TV)</td>
+                <td class="py-4 px-4 text-emerald-400 font-bold bg-emerald-950/20">CHF 0 (App sur Smart TV)</td>
               </tr>
               <tr>
                 <td class="py-4 px-4 text-white font-medium">Suppression Pubs Replay</td>
@@ -196,7 +208,7 @@ const comparisonSchema = {
     <!-- 2. Features Grid -->
     <FeatureGrid />
 
-    <!-- 3. Pricing Card (12-Month CHF 55.- first, NO TWINT) -->
+    <!-- 3. Pricing Card (12-Month CHF 55 first, NO TWINT) -->
     <PricingCard />
 
     <!-- 4. Referrer -->

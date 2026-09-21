@@ -54,6 +54,20 @@ const pageDescription = "Découvrez tous nos guides d'experts sur l'IPTV en Suis
                 </span>
               </div>
 
+              <!-- Featured Image with Alt -->
+              {guide.data.image && (
+                <a href={`/guides/${guide.slug}`} class="block mb-4 overflow-hidden rounded-2xl border border-white/[0.08]">
+                  <img
+                    src={guide.data.image}
+                    alt={guide.data.imageAlt || guide.data.title}
+                    class="w-full h-44 object-cover hover:scale-105 transition-transform duration-300"
+                    width="600"
+                    height="350"
+                    loading="lazy"
+                  />
+                </a>
+              )}
+
               <!-- Title -->
               <h2 class="text-lg sm:text-xl font-bold text-white mb-3 leading-snug line-clamp-2 hover:text-[#DC2626] transition-colors">
                 <a href={`/guides/${guide.slug}`}>

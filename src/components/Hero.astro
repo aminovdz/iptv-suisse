@@ -11,10 +11,10 @@ const {
   cityName,
   headline = cityName 
     ? `IPTV Suisse à ${cityName} — Streaming 4K Ultra HD sans coupure` 
-    : "IPTV Suisse — Streaming TV 4K Ultra HD sans coupure dès CHF 8.-",
+    : "IPTV Suisse — Streaming TV 4K Ultra HD sans coupure dès CHF 8",
   subheadline = cityName
     ? `Profitez du meilleur de l'IPTV Suisse à ${cityName} avec activation instantanée, technologie Anti-Freeze 9.8™, tous les matchs de National League en direct et assistance WhatsApp 24/7 en français.`
-    : "Découvrez IPTV Suisse, votre solution de streaming haute définition en Suisse romande et dans toute la Confédération. Accédez à vos chaînes suisses (RTS, SRF, RSI), au hockey sur glace en direct, à la Coupe du monde de Ski Alpin et aux grands rendez-vous sportifs mondiaux en 4K Ultra HD à 60 FPS sans coupure."
+    : "Découvrez IPTV Suisse, votre solution de streaming haute définition en Suisse romande et dans toute la Confédération. Accédez à vos chaînes nationales suisses en français, allemand et italien, au hockey sur glace en direct, à la Coupe du monde de Ski Alpin et aux grands rendez-vous sportifs mondiaux en 4K Ultra HD à 60 FPS sans coupure."
 } = Astro.props;
 
 const whatsappTrialUrl = "https://wa.me/18036582620?text=Bonjour%2C%20je%20souhaite%20d%C3%A9marrer%20mon%20essai%20gratuit%20de%2024h%20pour%20IPTV%20Suisse.";
@@ -66,7 +66,7 @@ const whatsappTrialUrl = "https://wa.me/18036582620?text=Bonjour%2C%20je%20souha
 
         <!-- High-Intent Opening Paragraph with Keyword Integration -->
         <p class="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mb-8 font-normal">
-          {subheadline} Économisez jusqu'à <strong class="text-white font-semibold">CHF 800.- par an</strong> par rapport aux abonnements de câble traditionnels (Swisscom TV, Sunrise). Sans contrat contraignant, compatible Smart TV, Fire Stick et smartphones.
+          {subheadline} Économisez jusqu'à <strong class="text-white font-semibold">CHF 800 par an</strong> par rapport aux abonnements de câble traditionnels (Swisscom TV, Sunrise). Sans contrat contraignant, compatible Smart TV, Fire Stick et smartphones.
         </p>
 
         <!-- Social Proof Stats Mini Strip -->
@@ -101,7 +101,7 @@ const whatsappTrialUrl = "https://wa.me/18036582620?text=Bonjour%2C%20je%20souha
             class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl text-base font-black text-white bg-gradient-to-r from-[#DC2626] via-[#EF4444] to-[#DC2626] shadow-[0_10px_30px_rgba(220,38,38,0.4)] hover:shadow-[0_15px_40px_rgba(220,38,38,0.6)] transition-all transform hover:-translate-y-0.5"
             aria-label="Choisir mon abonnement IPTV Suisse"
           >
-            <span>Abonnements (dès CHF 8.-)</span>
+            <span>Abonnements (dès CHF 8)</span>
             <ArrowRight class="w-5 h-5" />
           </a>
 
@@ -172,7 +172,7 @@ const whatsappTrialUrl = "https://wa.me/18036582620?text=Bonjour%2C%20je%20souha
                 <div class="bg-[#1C2030]/80 rounded-xl p-3 border border-white/[0.05] flex items-center justify-between">
                   <div class="flex items-center gap-3">
                     <div class="w-8 h-8 rounded-lg bg-[#DC2626]/20 border border-[#DC2626]/30 flex items-center justify-center font-black text-xs text-[#DC2626]">
-                      RTS
+                      CH-FR
                     </div>
                     <div>
                       <p class="text-xs font-bold text-white">National League Hockey</p>
@@ -187,7 +187,7 @@ const whatsappTrialUrl = "https://wa.me/18036582620?text=Bonjour%2C%20je%20souha
                 <div class="bg-[#1C2030]/80 rounded-xl p-3 border border-white/[0.05] flex items-center justify-between">
                   <div class="flex items-center gap-3">
                     <div class="w-8 h-8 rounded-lg bg-[#F59E0B]/20 border border-[#F59E0B]/30 flex items-center justify-center font-black text-xs text-[#F59E0B]">
-                      SRF
+                      CH-DE
                     </div>
                     <div>
                       <p class="text-xs font-bold text-white">Ski Alpin Coupe du Monde</p>
@@ -202,7 +202,7 @@ const whatsappTrialUrl = "https://wa.me/18036582620?text=Bonjour%2C%20je%20souha
                 <div class="bg-[#1C2030]/80 rounded-xl p-3 border border-white/[0.05] flex items-center justify-between">
                   <div class="flex items-center gap-3">
                     <div class="w-8 h-8 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center font-black text-xs text-white">
-                      UHD
+                      CH-IT
                     </div>
                     <div>
                       <p class="text-xs font-bold text-white">Football Super League</p>
@@ -227,7 +227,7 @@ const whatsappTrialUrl = "https://wa.me/18036582620?text=Bonjour%2C%20je%20souha
                 </span>
               </div>
               <div class="text-right">
-                <span class="text-2xl font-black text-white">CHF 55.-</span>
+                <span class="text-2xl font-black text-white">CHF 55</span>
                 <span class="text-[10px] text-gray-400 block">Soit CHF 4.58/mois</span>
               </div>
             </div>

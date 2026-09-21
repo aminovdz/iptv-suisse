@@ -36,7 +36,7 @@ Chaque journée de National League comporte jusqu'à 7 rencontres disputées sim
 - **Conférence Alémanique :** ZSC Lions (Swiss Life Arena), SC Bern (PostFinance Arena), EV Zug (Bossard Arena), HC Davos (Eisstadion), EHC Biel-Bienne, SC Rapperswil-Jona Lakers, SCL Tigers, EHC Kloten.
 - **Tessin :** HC Lugano (Corner Arena) et HC Ambri-Piotta (Gottardo Arena).
 
-Grâce au flux multi-canaux, vous pouvez choisir votre match ou suivre le multiplex avec les commentaires en français (RTS), en allemand (SRF) ou en italien (RSI).
+Grâce au flux multi-canaux, vous pouvez choisir votre match ou suivre le multiplex avec les commentaires en direct en français, allemand ou italien selon votre préférence régionale.
 
 ---
 
@@ -56,5 +56,5 @@ Pour une expérience sans le moindre gel d'image pendant les prolongations :
 ## 4. Vos avantages avec l'abonnement IPTV Suisse
 
 - **Accès instantané :** Vos codes d'accès M3U et Xtream sont livrés en moins de 2 minutes par e-mail et WhatsApp.
-- **Tarif imbattable :** Seulement **CHF 55.- pour l'année complète** (soit CHF 4.58/mois) contre plus de CHF 600.- par an sur les offres télévisuelles traditionnelles.
+- **Tarif imbattable :** Seulement **CHF 55 pour l'année complète** (soit CHF 4.58/mois) contre plus de CHF 600 par an sur les offres télévisuelles traditionnelles.
 - **Essai 24h gratuit :** Testez la fluidité du flux lors d'une soirée de match sans débourser un centime en contactant notre support sur WhatsApp.

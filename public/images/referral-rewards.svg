@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" class="w-full h-auto">
+  <defs>
+    <linearGradient id="bg-ref" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E111A" />
+      <stop offset="1" stop-color="#161B26" />
+    </linearGradient>
+    <linearGradient id="gold-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FBBF24" />
+      <stop offset="0.5" stop-color="#F59E0B" />
+      <stop offset="1" stop-color="#D97706" />
+    </linearGradient>
+    <linearGradient id="red-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#EF4444" />
+      <stop offset="1" stop-color="#DC2626" />
+    </linearGradient>
+    <filter id="glow-gold" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="24" fill="url(#bg-ref)" stroke="#ffffff" stroke-opacity="0.1" stroke-width="2" />
+
+  <!-- Subtle Swiss Grid -->
+  <circle cx="400" cy="250" r="180" stroke="#DC2626" stroke-opacity="0.15" stroke-dasharray="8 8" />
+  <circle cx="400" cy="250" r="230" stroke="#F59E0B" stroke-opacity="0.1" stroke-dasharray="12 12" />
+
+  <!-- Gift Box Base -->
+  <rect x="300" y="220" width="200" height="150" rx="16" fill="#1C2030" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2" />
+  
+  <!-- Ribbon Vertical -->
+  <rect x="385" y="220" width="30" height="150" fill="url(#red-grad)" />
+  <rect x="300" y="280" width="200" height="30" fill="url(#red-grad)" />
+
+  <!-- Gift Box Lid -->
+  <rect x="285" y="180" width="230" height="46" rx="10" fill="url(#gold-grad)" filter="url(#glow-gold)" />
+  <rect x="385" y="180" width="30" height="46" fill="#DC2626" />
+
+  <!-- Bow on top -->
+  <path d="M 360 180 C 330 130, 390 120, 400 170 C 410 120, 470 130, 440 180 Z" fill="url(#gold-grad)" />
+  <circle cx="400" cy="175" r="12" fill="#DC2626" />
+
+  <!-- Swiss Cross Badge on Gift -->
+  <rect x="385" y="280" width="30" height="30" rx="4" fill="#DC2626" />
+  <rect x="396" y="285" width="8" height="20" fill="#ffffff" />
+  <rect x="390" y="291" width="20" height="8" fill="#ffffff" />
+
+  <!-- Floating Cards -->
+  <!-- Parrain Badge Left -->
+  <g transform="translate(100, 150)">
+    <rect width="170" height="90" rx="16" fill="#121520" stroke="#F59E0B" stroke-opacity="0.4" stroke-width="2" />
+    <circle cx="40" cy="45" r="22" fill="#F59E0B" fill-opacity="0.15" />
+    <text x="40" y="52" text-anchor="middle" font-size="20" font-family="sans-serif">🎁</text>
+    <text x="75" y="40" fill="#ffffff" font-size="14" font-weight="bold" font-family="sans-serif">Pour Vous</text>
+    <text x="75" y="60" fill="#FBBF24" font-size="15" font-weight="900" font-family="sans-serif">+1 MOIS OFFERT</text>
+  </g>
+
+  <!-- Filleul Badge Right -->
+  <g transform="translate(530, 150)">
+    <rect width="170" height="90" rx="16" fill="#121520" stroke="#10B981" stroke-opacity="0.4" stroke-width="2" />
+    <circle cx="40" cy="45" r="22" fill="#10B981" fill-opacity="0.15" />
+    <text x="40" y="52" text-anchor="middle" font-size="20" font-family="sans-serif">✨</text>
+    <text x="75" y="40" fill="#ffffff" font-size="14" font-weight="bold" font-family="sans-serif">Pour l'Ami</text>
+    <text x="75" y="60" fill="#34D399" font-size="15" font-weight="900" font-family="sans-serif">+1 MOIS OFFERT</text>
+  </g>
+
+  <!-- Bottom Text Banner -->
+  <rect x="220" y="410" width="360" height="46" rx="23" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.1" />
+  <text x="400" y="439" text-anchor="middle" fill="#E5E7EB" font-size="14" font-weight="bold" font-family="sans-serif">PROGRAMME PARRAINAGE 100% GAGNANT 🇨🇭</text>
+</svg>

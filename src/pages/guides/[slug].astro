@@ -95,6 +95,20 @@ const articleSchema = {
         </div>
       </header>
 
+      <!-- Featured Guide Banner Image with Alt Text -->
+      {guide.data.image && (
+        <div class="mb-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+          <img
+            src={guide.data.image}
+            alt={guide.data.imageAlt || guide.data.title}
+            class="w-full h-auto max-h-[450px] object-cover"
+            width="800"
+            height="450"
+            loading="eager"
+          />
+        </div>
+      )}
+
       <!-- Markdown Article Content -->
       <article class="prose prose-invert prose-red max-w-none prose-headings:font-bold prose-headings:text-white prose-p:text-gray-300 prose-p:leading-relaxed prose-strong:text-white prose-li:text-gray-300 prose-blockquote:border-[#DC2626] prose-blockquote:bg-white/[0.02] prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-xl">
         <Content />
@@ -113,7 +127,7 @@ const articleSchema = {
                 Prêt à Passer au Streaming 4K Sans Coupure ?
               </h3>
               <p class="text-xs sm:text-sm text-gray-300 max-w-xl">
-                Rejoignez des milliers de clients satisfaits en Suisse dès <strong>CHF 8.-</strong> ou optez pour notre formule annuelle recommandée à <strong>CHF 55.-/an</strong> (~CHF 4.58/mois).
+                Rejoignez des milliers de clients satisfaits en Suisse dès <strong>CHF 8</strong> ou optez pour notre formule annuelle recommandée à <strong>CHF 55/an</strong> (~CHF 4.58/mois).
               </p>
             </div>
 
@@ -122,7 +136,7 @@ const articleSchema = {
                 href="/#pricing"
                 class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#DC2626] to-[#EF4444] text-white font-bold text-xs shadow-lg shadow-red-900/30 hover:scale-[1.02] transition-transform"
               >
-                <span>Voir les Offres (CHF 55.-)</span>
+                <span>Voir les Offres (CHF 55)</span>
                 <ArrowRight class="w-4 h-4" />
               </a>
 

@@ -20,7 +20,7 @@ import ExitPopup from '../components/ExitPopup.astro';
 import GroupsPopup from '../components/GroupsPopup.astro';
 
 const pageTitle = "IPTV Suisse 2026 — Meilleur Abonnement IPTV 4K Stable & Sans Coupure";
-const pageDescription = "Profitez du meilleur abonnement IPTV Suisse en 4K Ultra HD. Technologie Anti-Freeze 9.8™, chaînes suisses, sport en direct et activation en 2 min. Dès CHF 8.-";
+const pageDescription = "Profitez du meilleur abonnement IPTV Suisse en 4K Ultra HD. Technologie Anti-Freeze 9.8™, chaînes suisses, sport en direct et activation en 2 min. Dès CHF 8";
 const pageKeywords = [
   "iptv suisse",
   "iptv schweiz",
@@ -46,6 +46,29 @@ const pageKeywords = [
   <main id="main-content">
     <!-- 1. Hero Banner with primary H1 & fast conversion CTA -->
     <Hero />
+
+    <!-- Visual Showcase of IPTV Suisse 4K Experience -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 sm:-mt-10 mb-16 relative z-10">
+      <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)]">
+        <img
+          src="/images/iptv-suisse-hero.jpg"
+          alt="Interface IPTV Suisse 4K Ultra HD sur Smart TV dans un salon moderne avec vue sur les Alpes suisses"
+          class="w-full h-auto object-cover max-h-[520px]"
+          width="1920"
+          height="1080"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0B0C10] via-transparent to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-4 rounded-2xl bg-[#0F111A]/90 backdrop-blur-md border border-white/10">
+          <div class="flex items-center gap-3">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+            <span class="text-xs sm:text-sm font-bold text-white">Diffusion 4K Native 60 FPS active sur les serveurs suisses</span>
+          </div>
+          <span class="text-xs text-gray-400 font-mono">Compatible Samsung, LG, Apple TV & Fire Stick</span>
+        </div>
+      </div>
+    </div>
 
     <!-- 2. Live Sports Center (National League Hockey & Ski Alpin Tracker) -->
     <LiveScores />

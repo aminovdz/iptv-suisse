@@ -20,7 +20,7 @@ import GroupsPopup from '../components/GroupsPopup.astro';
 import { Trophy, ArrowRight, MessageCircle, Flame } from 'lucide-astro';
 
 const pageTitle = "IPTV Suisse Sport Direct 4K 60FPS — National League, Ski Alpin & Football";
-const pageDescription = "Vivez tout le sport suisse et international en 4K Ultra HD à 60 FPS sans coupure. National League, Coupe du Monde de Ski, Super League dès CHF 8.-";
+const pageDescription = "Vivez tout le sport suisse et international en 4K Ultra HD à 60 FPS sans coupure. National League, Coupe du Monde de Ski, Super League dès CHF 8";
 const pageKeywords = [
   "iptv suisse",
   "iptv suisse sport",
@@ -35,7 +35,7 @@ const pageKeywords = [
 <Layout
   title={pageTitle}
   description={pageDescription}
-  canonical="/landing-v2"
+  canonical="/iptv-sport-suisse"
   keywords={pageKeywords}
 >
   <!-- Navigation Header -->
@@ -70,7 +70,7 @@ const pageKeywords = [
             class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-[#DC2626] to-[#EF4444] text-white font-black text-base shadow-xl shadow-red-900/30 hover:scale-[1.02] transition-transform"
           >
             <Trophy class="w-5 h-5 text-amber-300" />
-            <span>Formule Recommandée 12 Mois (CHF 55.-)</span>
+            <span>Formule Recommandée 12 Mois (CHF 55)</span>
             <ArrowRight class="w-5 h-5" />
           </a>
 
@@ -97,23 +97,23 @@ const pageKeywords = [
           </div>
           <div class="p-4 rounded-2xl bg-[#12141D] border border-white/[0.06]">
             <span class="text-2xl sm:text-3xl font-black text-[#60A5FA]">3 Langues</span>
-            <p class="text-xs text-gray-400 font-medium mt-1">Commentaires RTS, SRF &amp; RSI</p>
+            <p class="text-xs text-gray-400 font-medium mt-1">Commentaires FR, DE &amp; IT</p>
           </div>
           <div class="p-4 rounded-2xl bg-[#12141D] border border-white/[0.06]">
             <span class="text-2xl sm:text-3xl font-black text-amber-400">0 Coupure</span>
-            <p class="text-xs text-gray-400 font-medium mt-1">Serveurs locaux Swisscom &amp; Salt</p>
+            <p class="text-xs text-gray-400 font-medium mt-1">Serveurs locaux Genève &amp; Zurich</p>
           </div>
         </div>
 
         <!-- Sports Visual Illustration -->
-        <div class="mt-12 max-w-3xl mx-auto rounded-3xl overflow-hidden border border-white/[0.08] bg-[#0E1018]/80 p-2 sm:p-4 shadow-2xl">
+        <div class="mt-12 max-w-4xl mx-auto rounded-3xl overflow-hidden border border-white/[0.1] bg-[#0E1018]/80 p-2 sm:p-4 shadow-2xl">
           <img
-            src="/images/swiss-sports.svg"
-            alt="Retransmission en direct sport suisse et National League IPTV Suisse"
-            width="800"
-            height="500"
-            loading="lazy"
-            class="w-full h-auto rounded-2xl mx-auto"
+            src="/images/swiss-sports-4k.jpg"
+            alt="Diffusion en direct de match de hockey sur glace suisse et ski alpin en qualité 4K 60 FPS sans latence"
+            width="1920"
+            height="1080"
+            loading="eager"
+            class="w-full h-auto rounded-2xl mx-auto object-cover max-h-[500px]"
           />
         </div>
       </div>
@@ -125,7 +125,7 @@ const pageKeywords = [
     <!-- 2. Features Grid (Anti-Freeze 9.8™, Swiss ISP bypass, Swiss LDA 19 privacy) -->
     <FeatureGrid />
 
-    <!-- 3. Pricing Card (12 Mois at CHF 55.- First, No TWINT) -->
+    <!-- 3. Pricing Card (12 Mois at CHF 55 First, No TWINT) -->
     <PricingCard />
 
     <!-- 4. Referrer (ReferralBanner: 1 mois offert pour chacun) -->
@@ -134,29 +134,29 @@ const pageKeywords = [
     <!-- 5. Testimonials (UserReviewsSection: 1940+ Avis Clients Suisses) -->
     <UserReviewsSection />
 
-    <!-- 6. How to Process (ProcessSteps: 3 étapes en 2 minutes) -->
+    <!-- 6. Step-by-Step Activation (2 minutes sur WhatsApp) -->
     <ProcessSteps />
 
-    <!-- 7. Supported Devices (Smart TV, Apple TV, Fire TV, Android, MAG, PC) -->
+    <!-- 7. Compatible Devices (Samsung, LG, Firestick, Apple TV, PC) -->
     <SupportedDevices />
 
-    <!-- 8. Cities (CitiesList: Les 16 Villes et Cantons Suisses) -->
+    <!-- 8. Local Cities List (SEO local) -->
     <CitiesList />
 
-    <!-- 9. Contact (ContactForm: WhatsApp, Telegram & Deux Adresses E-mail) -->
+    <!-- 9. Contact / WhatsApp CTA Form -->
     <ContactForm />
 
-    <!-- 10. FAQ (FAQSection: Balisage Schema FAQPage & Remboursement 24h) -->
+    <!-- 10. Frequently Asked Questions -->
     <FAQSection />
 
-    <!-- 11. Final Conversion CTA -->
+    <!-- 11. Final Closing Conversion Card -->
     <CTASection />
   </main>
 
   <!-- Global Footer -->
   <Footer />
 
-  <!-- Interactive Overlays with 24h localStorage cap -->
+  <!-- Conversion Enhancers -->
   <FloatingWhatsApp />
   <SocialPopup />
   <ExitPopup />

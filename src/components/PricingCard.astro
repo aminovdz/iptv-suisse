@@ -29,7 +29,7 @@ const plans: Plan[] = [
     bonus: "Bonus : Licence Application Player Premium Offerte",
     features: [
       "Flux en Ultra HD 4K & 8K natif à 60 FPS",
-      "Toutes les chaînes suisses (RTS, SRF, RSI) & internationales",
+      "Toutes les chaînes suisses (Romandie, Alémanique, Tessin) & internationales",
       "National League Hockey, Ski Alpin & grands championnats",
       "Technologie Anti-Freeze 9.8™ (Nœuds CDN Genève & Zürich)",
       "Guide des programmes interactif (EPG) & Replay 7 jours",
@@ -39,8 +39,8 @@ const plans: Plan[] = [
       "Support VIP dédié 24/7 en français",
       "Garantie satisfait ou remboursé 24 heures sans condition"
     ],
-    ctaText: "Choisir la Formule 12 Mois (CHF 55.-)",
-    whatsappMessage: "Bonjour%2C%20je%20souhaite%20commander%20l%27abonnement%20IPTV%20Suisse%2012%20Mois%20%C3%A0%20CHF%2055.-%20avec%20activation%20imm%C3%A9diate."
+    ctaText: "Choisir la Formule 12 Mois (CHF 55)",
+    whatsappMessage: "Bonjour%2C%20je%20souhaite%20commander%20l%27abonnement%20IPTV%20Suisse%2012%20Mois%20%C3%A0%20CHF%2055%20avec%20activation%20imm%C3%A9diate."
   },
   {
     id: "6-months",
@@ -63,8 +63,8 @@ const plans: Plan[] = [
       "Assistance WhatsApp francophone 24/7",
       "Garantie satisfait ou remboursé 24 heures"
     ],
-    ctaText: "Choisir le Pack 6 Mois (CHF 30.-)",
-    whatsappMessage: "Bonjour%2C%20je%20souhaite%20commander%20l%27abonnement%20IPTV%20Suisse%206%20Mois%20%C3%A0%20CHF%2030.-%20avec%20activation%20imm%C3%A9diate."
+    ctaText: "Choisir le Pack 6 Mois (CHF 30)",
+    whatsappMessage: "Bonjour%2C%20je%20souhaite%20commander%20l%27abonnement%20IPTV%20Suisse%206%20Mois%20%C3%A0%20CHF%2030%20avec%20activation%20imm%C3%A9diate."
   },
   {
     id: "3-months",
@@ -84,15 +84,15 @@ const plans: Plan[] = [
       "Support technique 7j/7 sur WhatsApp",
       "Garantie satisfait ou remboursé 24 heures"
     ],
-    ctaText: "Choisir le Pack 3 Mois (CHF 20.-)",
-    whatsappMessage: "Bonjour%2C%20je%20souhaite%20commander%20l%27abonnement%20IPTV%20Suisse%203%20Mois%20%C3%A0%20CHF%2020.-%20avec%20activation%20imm%C3%A9diate."
+    ctaText: "Choisir le Pack 3 Mois (CHF 20)",
+    whatsappMessage: "Bonjour%2C%20je%20souhaite%20commander%20l%27abonnement%20IPTV%20Suisse%203%20Mois%20%C3%A0%20CHF%2020%20avec%20activation%20imm%C3%A9diate."
   },
   {
     id: "1-month",
     name: "1 Mois — Formule Découverte",
     duration: "1 Mois",
     price: "8",
-    monthlyEquivalent: "Paiement unique CHF 8.-",
+    monthlyEquivalent: "Paiement unique CHF 8",
     savings: "Sans Engagement",
     featured: false,
     bonus: "Renouvellement manuel sans prélèvement auto",
@@ -104,8 +104,8 @@ const plans: Plan[] = [
       "Activation rapide en 2 minutes",
       "Garantie satisfait ou remboursé 24 heures"
     ],
-    ctaText: "Choisir le Pack 1 Mois (CHF 8.-)",
-    whatsappMessage: "Bonjour%2C%20je%20souhaite%20commander%20l%27abonnement%20IPTV%20Suisse%201%20Mois%20%C3%A0%20CHF%208.-%20avec%20activation%20imm%C3%A9diate."
+    ctaText: "Choisir le Pack 1 Mois (CHF 8)",
+    whatsappMessage: "Bonjour%2C%20je%20souhaite%20commander%20l%27abonnement%20IPTV%20Suisse%201%20Mois%20%C3%A0%20CHF%208%20avec%20activation%20imm%C3%A9diate."
   }
 ];
 
@@ -169,7 +169,7 @@ const whatsappBaseUrl = "https://wa.me/18036582620?text=";
               <div class="mt-4 flex items-baseline gap-1">
                 <span class="text-gray-400 text-sm font-semibold">CHF</span>
                 <span class="text-4xl sm:text-5xl font-black text-white tracking-tight">
-                  {plan.price}.-
+                  {plan.price}
                 </span>
               </div>
               <p class="text-xs text-gray-400 mt-1 font-medium">
@@ -211,7 +211,7 @@ const whatsappBaseUrl = "https://wa.me/18036582620?text=";
                   ? 'bg-gradient-to-r from-[#DC2626] to-[#EF4444] text-white hover:from-[#B91C1C] hover:to-[#DC2626] shadow-lg shadow-red-900/30 hover:scale-[1.02]'
                   : 'bg-[#1E2337] text-white hover:bg-[#252B42] hover:text-gray-100 border border-white/[0.08]'
               }`}
-              aria-label={`Commander le forfait ${plan.name} à CHF ${plan.price}.-`}
+              aria-label={`Commander le forfait ${plan.name} à CHF ${plan.price}`}
             >
               <MessageCircle class="w-4 h-4" />
               <span>{plan.ctaText}</span>
