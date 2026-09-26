@@ -174,7 +174,8 @@ export async function getStaticPaths() {
 
 const { city } = Astro.props;
 
-const pageTitle = `IPTV ${city.name} 2026 — Meilleur Abonnement IPTV 4K à ${city.name} (${city.canton})`;
+const currentYear = new Date().getFullYear();
+const pageTitle = `IPTV ${city.name} ${currentYear} — Meilleur Abonnement IPTV 4K à ${city.name} (${city.canton})`;
 const pageDescription = `Abonnement IPTV à ${city.name} en 4K Ultra HD. Compatible fibre ${city.localIsp}. Chaînes suisses et sport en direct dès CHF 8`;
 const pageKeywords = [
   `iptv ${city.name.toLowerCase()}`,

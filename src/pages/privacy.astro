@@ -6,6 +6,7 @@ import { ShieldCheck, Lock, EyeOff, Server, FileText, CheckCircle2 } from 'lucid
 
 const pageTitle = "Politique de Confidentialité | Protection des Données LPD - IPTV Suisse";
 const pageDescription = "Découvrez notre engagement strict pour la confidentialité et le respect de la nouvelle Loi fédérale sur la protection des données (nLPD) en Suisse.";
+const currentYear = new Date().getFullYear();
 ---
 
 <Layout title={pageTitle} description={pageDescription} canonical="/privacy">
@@ -23,7 +24,7 @@ const pageDescription = "Découvrez notre engagement strict pour la confidential
           Politique de Confidentialité
         </h1>
         <p class="text-sm sm:text-base text-gray-400">
-          Dernière mise à jour : 1er Janvier 2026. Chez IPTV Suisse, la protection de votre sphère privée est un principe fondamental ancré dans la tradition de neutralité et de discrétion suisse.
+          Dernière mise à jour : 1er Janvier {currentYear}. Chez IPTV Suisse, la protection de votre sphère privée est un principe fondamental ancré dans la tradition de neutralité et de discrétion suisse.
         </p>
       </div>
 

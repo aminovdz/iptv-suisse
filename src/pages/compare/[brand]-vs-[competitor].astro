@@ -62,8 +62,8 @@ export async function getStaticPaths() {
 }
 
 const { comparison } = Astro.props;
-
-const pageTitle = `IPTV Suisse vs ${comparison.competitorName} (2026) — Comparatif Prix & Qualité`;
+const currentYear = new Date().getFullYear();
+const pageTitle = `IPTV Suisse vs ${comparison.competitorName} (${currentYear}) — Comparatif Prix & Qualité`;
 const pageDescription = `Comparatif détaillé IPTV Suisse contre ${comparison.competitorName}. Tarifs, qualité 4K, engagement et économies annuelles pour les foyers suisses.`;
 
 const comparisonSchema = {
