@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import StickyHeader from '../../components/StickyHeader.astro';
+import LiveScores from '../../components/LiveScores.astro';
 import FeatureGrid from '../../components/FeatureGrid.astro';
 import PricingCard from '../../components/PricingCard.astro';
 import ReferralBanner from '../../components/ReferralBanner.astro';
@@ -204,6 +205,9 @@ const comparisonSchema = {
         </div>
       </div>
     </section>
+
+    <!-- Live Scores Infinite Loop Carousel Directly Under Hero -->
+    <LiveScores />
 
     <!-- 2. Features Grid -->
     <FeatureGrid />
