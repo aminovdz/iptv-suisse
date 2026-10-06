@@ -50,7 +50,7 @@ Dès l'ouverture, l'écran affiche deux identifiants uniques :
 
 ### Étape 3 : Chargement de votre abonnement IPTV Suisse
 Deux options simples s'offrent à vous :
-- **Option A (Automatique via notre support) :** Envoyez simplement une photo de votre écran avec la Device MAC et la Device Key à notre assistance par WhatsApp (+1 803 658 2620). Nos techniciens configurent votre liste pour vous en moins de 2 minutes !
+- **Option A (Automatique via notre support) :** Envoyez simplement une photo de votre écran avec la Device MAC et la Device Key à notre assistance par WhatsApp (+213 550 59 22 00). Nos techniciens configurent votre liste pour vous en moins de 2 minutes !
 - **Option B (En toute autonomie) :** Rendez-vous sur le portail de gestion d'IBO Player depuis votre ordinateur ou votre smartphone, saisissez vos deux codes, collez votre lien M3U IPTV Suisse reçu par e-mail, puis validez.
 
 ### Étape 4 : Redémarrage et Visionnage
